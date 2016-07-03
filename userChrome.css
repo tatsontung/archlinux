@@ -1,0 +1,5 @@
+/* this must be edited in firefox_home profile chrome */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+menu.bookmark-item > .menu-iconic-left {
+  visibility: visible;
+}

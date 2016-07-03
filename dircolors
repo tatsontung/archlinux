@@ -1,0 +1,262 @@
+.bin   01;32
+.class 01;32
+.o     01;32
+.run   01;32
+.sh    01;32
+
+# DOS executables (green)
+.BAT 00;32
+.bat 00;32 # batch
+.btm 00;32
+.cgi 00;32
+.cmd 00;32 # command
+.com 00;32
+.DLL 00;32
+.dll 00;32 # dynamic library
+.EXE 00;32
+.exe 00;32 # dos binary
+.pif 00;32
+
+# archives or compressed (bright red)
+.arj  01;31
+.bz   01;31
+.bz2  01;31
+.cpio 01;31
+.deb  01;31
+.gz   01;31
+.lha  01;31
+.lzh  01;31
+.rar  01;31
+.rpm  01;31
+.tar  01;31
+.taz  01;31
+.tgz  01;31
+.Z    01;31
+.z    01;31
+.zip  01;31
+.ZIP  01;31
+
+# doom, quake files (bright red too)
+.dem 01;31 # quake I demo
+.LMP 01;31
+.lmp 01;31 # doom demo 
+.pak 01;31 # quake world
+.pk2 01;31 # quake 2 world
+.pk3 01;31 # quake 3 world
+.pk4 01;31 # doom³ World
+.WAD 01;31
+.wad 01;31 # doom and heretic world
+.DEH 01;31
+.deh 01;31 # dehacked patch file
+
+# image formats (cyan)
+#.avi  00;36
+.3ds  00;36 # 3d studio
+.ag   00;36 # applixware
+.BMP  00;36
+.bmp  00;36 # bitmap
+.cgm  00;36
+.dl   00;36
+.dxf  00;36 # autocad/qcad
+.dwg  00;36 # autocad
+.fig  00;36 # xfig
+.fli  00;36
+.GIF  00;36
+.gif  00;36 # graphics interchange format
+.gl   00;36
+.gnu  00;36 # gnuplot
+.ico  00;36
+.ICO  00;36
+.ief  00;36
+.iff  00;36
+.jfif 00;36 # jpeg
+.jif  00;36 # jpeg
+.jpe  00;36 # jpeg
+.jpeg 00;36
+.JPG  00;36
+.jpg  00;36 # jpeg
+#.mpg  00;36
+.pbm  00;36 # portable bitmap
+.pcd  00;36 # photo cd
+.pct  00;36 # mac pict
+.PCX  00;36
+.pcx  00;36 # Zsoft Paintbrush (ID games output)
+.pgm  00;36 # portable graymap
+.png  00;36 # portable network graphic
+.ppm  00;36 # portable pixelmap
+.psd  00;36 # photoshop
+.ras  00;36 # sun rasterfile
+.rgb  00;36
+.svg  00;36 # scalar vector graphics
+.sxd  00;36 # oo draw
+.tga  00;36 # targa
+.tif  00;36 # tag image file
+.tiff 00;36
+.xbm  00;36 # x pixmap
+.xcf  00;36 # gimp
+.xpm  00;36 # x pixmap
+.xwd  00;36 # x-window
+.wmf  00;36 # windows meta file
+
+# sound formats (dark blue), some conflicts
+
+.8svx 00;34 # amiga 8svx
+.ac3  00;34 # dolby
+.aif  00;34 # apple II or sgi
+.aifc 00;34
+.aiff 00;34
+.au   00;34 # sun
+.cdr  00;34 # cd-r
+#.cvs  00;34 # cvs ?
+#.dat  00;34 # data ?
+.gsm  00;34 # gsm
+.hcom 00;34 # mac
+.maud 00;34 # amiga
+.mid  00;34
+.MID  00;34
+.midi 00;34
+.mp3  00;34
+.ogg  00;34
+.psid 00;34 # commodore 64
+.ra   00;34 # real audio
+.ram  00;34 # idem
+.raw  00;34
+.rm   00;34 # real audio
+.sb   00;34 # raw
+.sf   00;34 # ircam
+.sid  00;34 # commodore 64
+.smp  00;34 # turtle beach
+.snd  00;34 # basic audio
+.sw   00;34 # raw
+.txw  00;34 # yamaha
+.ub   00;34 # raw
+.ul   00;34 # raw
+.uw   00;34 # raw
+.vms  00;34
+.voc  00;34 # sound blaster
+.wav  00;34 # microsoft
+.wve  00;34 # psion
+
+# video formats (red)
+
+.asf   00;31
+.asx   00;31
+.avi   00;31
+.cin   00;31
+.dvx   00;31
+.mov   00;31 # quicktime
+.movie 00;31 # sgi
+.mp2   00;31
+.mpe   00;31
+.mpeg  00;31
+.mpg   00;31
+.ogm   00;31 # ogg
+.qt    00;31 # quicktime
+.vob   00;31
+.wmv   00;31
+
+# text formats not binary (magenta)
+
+.aux    01;35 # latex auxiliary format
+.css    01;35
+.htm    01;35
+.html   01;35
+.info   01;35
+.latex  01;35
+.log    01;35
+.lyx    01;35
+.m3u	01;35 # multimedia links
+.man    01;35
+.md5    01;35 # md5 signature
+.pgp    01;35
+.php    01;35
+.shtml  01;35
+.tex    01;35
+.TXT    01;35
+.txt    01;35
+.xml    01;35
+.wrl    01;35
+
+.bas    01;35 # basic
+.C      01;35
+.c      01;35
+.cc     01;35
+.c++    01;35
+.cpp    01;35 # c++
+.el     01;35 # e-lisp
+.f      01;35 # fortran
+.H      01;35
+.h      01;35
+.h++    01;35
+.hp     01;35
+.java   01;35
+.p      01;35 # perl
+.py     01;35 # python
+.roff   01;35 # troff
+.scm    01;35 # scheme
+.t      01;35 # troff
+.tr     01;35 # troff
+
+.cfg    01;35
+.conf   01;35
+.config 01;35
+.ini    01;35
+.etheme 01;35
+.theme  01;35
+
+.fct    01;35 # gnofract4d fractal location and configuration
+.g2w    01;35 # geoplan
+.g3w    01;35 # geospace
+
+.csv    01;35 # comma separated values
+.tsv    01;35 # tab separated values
+
+#text formats binary or strange or spreadsheet (purple)
+
+.abw      00;35 # abiword
+.doc      00;35 # word
+.DOC      00;35
+.dot      00;35 # word template
+.eps      00;35 # ecapsulated postscript
+.hlp      00;35 # windows help
+.HLP      00;35
+.ppt      00;35 # power point
+.sda      00;35 # star draw
+.sdc      00;35 # star calc
+.sdd      00;35 # star impress
+.sdf      00;35 # star math
+.sdp      00;35 # star impress
+.sds      00;35 # star chart
+.sdw      00;35 # star writer
+.smd      00;35 # star mail
+.stc      00;35 # oo calc template
+.std      00;35 # oo draw template
+.sti      00;35 # oo presentation template
+.stw      00;35 # oo write template
+.sxc      00;35 # oo calc
+.sxg      00;35 # oo master doc
+.sxi      00;35 # oo presentation
+.sxm      00;35 # oo math
+.sxw      00;35 # oo write
+.vor      00;35 # star office template
+.wri      00;35 # write
+.WRI      00;35
+.zabw     00;35 # gzipped abiword
+
+.dvi      00;35 # device independant, ((la)tex output)
+.pdf      00;35 # portable document format (adobe)
+.ps       00;35 # postscript
+.rtf      00;35 # rich text format (word)
+
+.gnumeric 00;35
+.sdc      00;35 # star calc
+.sxc      00;35 # oo calc
+.xla      00;35 # excel
+.xlc      00;35
+.xls      00;35
+.xlt      00;35 # excel template
+
+.geo      00;35 # drgeo
+.mac      00;35 # drgeo macro
+
+.qif      00;35 # quicken

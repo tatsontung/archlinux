@@ -1,0 +1,4 @@
+${alignc 335}${voffset -48}${color}${font ConkyWeather:style=Bold:size=24}[--datatype=WF]${font}
+${alignc 320}${voffset 1}[--datatype=CT]
+${alignc 320}${voffset -1}${color3}[--datatype=HT --hideunits] ${color}/ ${color3}[--datatype=LT --hideunits]${color}
+

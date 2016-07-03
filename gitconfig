@@ -1,0 +1,11 @@
+[user]
+	name = tatsontung.nguyen
+	password = kz4Ty5fA2uZ4
+	email = tatsontung.nguyen@gmail.com
+[http]
+	proxy = https://proxybkp:8080
+	proxyuser = AD&#92;DRGD2089
+	proxypass = Nguyen%4012
+	
+[color]
+	ui = true

@@ -1,0 +1,8 @@
+# Good Terminal Color
+# Ubuntu
+bg : rgb(253, 246, 227)
+text : rgb(101, 123, 131)
+
+# Solarized
+bg : rgb(253, 246, 227)
+text : rgb(101, 123, 131)
