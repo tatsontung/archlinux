@@ -151,32 +151,11 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
 fi
 
 # enable for window
 DIR_COLORS=~/.dircolors
 export DIR_COLORS
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias ls='ls --color=auto'
-alias jonas_dir='cd $JONAS_HOME'
-alias omega_dir='cd $OMEGA_HOME'
-#alias grep='grep --color=auto'
-#alias egrep='egrep --color=auto'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -308,6 +287,9 @@ txtrst='\e[0m'    # Text Reset
 
 PS1="\[$txtred\]\h\[$txtgrn\]@\u \[$txtylw\] \d \w \n\[$txtcyn\]yuwillsee \[$txtpur\]\$ \[$txtrst\]"
 [[ "$PS1" ]] && fortune | cowsay -n
-
+echo ""
+echo ""
+screenfetch -A Debian
+echo ""
 fi
 # end interactive check
