@@ -289,7 +289,7 @@ PS1="\[$txtred\]\h\[$txtgrn\]@\u \[$txtylw\] \d \w \n\[$txtcyn\]yuwillsee \[$txt
 [[ "$PS1" ]] && fortune | cowsay -n
 echo ""
 echo ""
-screenfetch -A Debian
+screenfetch
 echo ""
 fi
 # end interactive check
