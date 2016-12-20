@@ -284,7 +284,7 @@ txtrst='\e[0m'    # Text Reset
 ######################################
 # This bashrc's current prompt		 	 #
 ######################################
-
+PATH=$PATH:/h/Applications/GitHub/scripts
 PS1="\[$txtred\]\h\[$txtgrn\]@\u \[$txtylw\] \d \w \n\[$txtcyn\]yuwillsee \[$txtpur\]\$ \[$txtrst\]"
 [[ "$PS1" ]] && fortune | cowsay -n
 echo ""
