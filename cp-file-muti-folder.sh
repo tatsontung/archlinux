@@ -4,4 +4,9 @@ for dir in *; do [ -d "$dir" ] && mv "$dir"/*.mp4 . ; done
 for dir in *; do [ -d "$dir" ] && mv "$dir"/*.wmv . ; done
 for dir in *; do [ -d "$dir" ] && rm -rf "$dir"/* ; done
 
-for f in *.mp4 *.avi ; do d="${f%-*}" && mkdir "$d" && mv "$f" "$d/" ; done
+
+for f in *.mp4 *.avi ; do d="${f%.*.*}" && echo "$d" ; done
+for f in *.mp4 *.avi ; do d="${f%.*.*}" && mkdir "$d" && mv "$f" "$d/" ; done
+
+for f in *.mp4 *.avi *.mkv ; do d="${f%.*.*}" && echo "$d" ; done
+for f in *.mp4 *.avi *.mkv ; do d="${f%.*.*}" && mkdir "$d" && mv "$f" "$d/" ; done
