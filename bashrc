@@ -1,81 +1,11 @@
+#!bin/sh
 ##################################################
 # 'About' section for 'The Ultimate Bashrc File' #
 ##################################################
 
-function about() {
-cat <<EOF
-##################################################
-# The Ultimate Bashrc File			 #
-# .bashrc					 #
-# Creator:		Inameiname		 #
-# Version: 3.9			 		 #
-# Last modified: 	12 October 2011		 #
-# License:		GPLv3+			 #
-#						 #
-# Latest Changes:				 #
-# 3.9 - 12/10/11 - Added more functions and 	 #
-# aliases, including, about, cleanup, 		 #
-# repository-update-check, title, paste, upper,  #
-# lower, listhw, diffxml, vie, wgetall, cpo, 	 #
-# isdef, quietly, cpus, codename, codename_ver,  #
-# distro, jd, jda, upto, xpath, dups, 		 #
-# comparenclean, relinux-copy, & remastersys-	 #
-# copy, as well as added a relinux & remastersys #
-# alias section, and updated extundelete aliases #
-#			 			 #
-# Descripton:					 #
-# For those who love using the terminal, here is #
-# a '.bashrc' file I created, mainly for those 	 #
-# who've had issues with their own. Hopefully 	 #
-# it'll benefit those of whom love aliases, 	 #
-# functions, and such. Probably more than you  	 #
-# need, so modify all you want. I've organized it#
-# best I can to make it easier for using and 	 #
-# modification. This is also for those many 	 #
-# who've had a difficult time finding a good 	 #
-# source for their own on the net, like it was 	 #
-# for me.					 #
-# Oh, and any modifications that others wish to  #
-# share are always welcome. 			 #
-#						 #
-# Installation Instructions:			 #
-# Just extract the tar file and put in your 	 #
-# home directory. You may have to overwrite the  #
-# current one, so be sure to backup whatever 	 #
-# beforehand. FYI, the default text in the 	 #
-# '.bashrc' is included in this version so if 	 #
-# you haven't modified it at all, you should  	 #
-# have nothing to worry about.			 #
-# To refresh it, just type in the terminal:	 #
-# source ~/.bashrc				 #
-# ...or just close and open your terminal window.#
-# 						 #
-# License:					 #
-# This program is free software; you can 	 #
-# redistribute it and/or modify it under the 	 #
-# terms of the GNU General Public License as 	 #
-# published by the Free Software Foundation; 	 #
-# either version 3 of the License, or (at your 	 #
-# option) any later version.			 #
-#						 #
-# This program is distributed in the hope that it#
-# will be useful, but WITHOUT ANY WARRANTY; 	 #
-# without even the implied warranty of 		 #
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR 	 #
-# PURPOSE. See the GNU General Public License 	 #
-# for more details.				 #
-#						 #
-# Credits:					 #
-# Found through various sources (including 	 #
-# several things by me). I credit when I can.	 #
-# Commented-out stuff is what I personally do not#
-# need, so use at your own risk.		 #
-# Feel free to copy, share, tweak, eat, or	 #
-# whatever. Just remember to give credit, as I 	 #
-# have put a lot of work into this. Enjoy.	 #
-##################################################
-EOF
-}
+if [ -f ~/shell/shell_functions ]; then
+    . ~/shell/shell_functions
+fi
 
 #######################################################
 #----- ORIGINAL CONTENT ------ ORIGINAL CONTENT ------#
@@ -243,43 +173,9 @@ OS=$(uname)		# for resolving pesky os differing switches
 #  the description of the shopt command under SHELL BUILTIN COMMANDS
 #  below).
 
-########################
-#     Color chart			 #
-########################
-
-txtblk='\e[0;30m' # Black - Regular
-txtred='\e[0;31m' # Red
-txtgrn='\e[0;32m' # Green
-txtylw='\e[0;33m' # Yellow
-txtblu='\e[0;34m' # Blue
-txtpur='\e[0;35m' # Purple
-txtcyn='\e[0;36m' # Cyan
-txtwht='\e[0;37m' # White
-bldblk='\e[1;30m' # Black - Bold
-bldred='\e[1;31m' # Red
-bldgrn='\e[1;32m' # Green
-bldylw='\e[1;33m' # Yellow
-bldblu='\e[1;34m' # Blue
-bldpur='\e[1;35m' # Purple
-bldcyn='\e[1;36m' # Cyan
-bldwht='\e[1;37m' # White
-unkblk='\e[4;30m' # Black - Underline
-undred='\e[4;31m' # Red
-undgrn='\e[4;32m' # Green
-undylw='\e[4;33m' # Yellow
-undblu='\e[4;34m' # Blue
-undpur='\e[4;35m' # Purple
-undcyn='\e[4;36m' # Cyan
-undwht='\e[4;37m' # White
-bakblk='\e[40m'   # Black - Background
-bakred='\e[41m'   # Red
-badgrn='\e[42m'   # Green
-bakylw='\e[43m'   # Yellow
-bakblu='\e[44m'   # Blue
-bakpur='\e[45m'   # Purple
-bakcyn='\e[46m'   # Cyan
-bakwht='\e[47m'   # White
-txtrst='\e[0m'    # Text Reset
+if [ -f ~/shell/shell_colors ]; then
+    . ~/shell/shell_colors
+fi
 
 ######################################
 # This bashrc's current prompt		 	 #
