@@ -1,5 +1,4 @@
-#!/bin/bash
-#
+#!/bin/sh
 # Windows Screenfetch (Without the Screenshot functionality)
 # Hacked together by Nijikokun <nijikokun@gmail.com>
 # License: AOL <aol.nexua.org>
@@ -84,8 +83,8 @@ detectArch () {
 }
 
 detectHDD () {
-	size=`df -H | grep -E '^[A-Z]\:\/?|File' | awk '{ print $2 }' | head -1 | tr -d '\r '`
-	free=`df -H |  grep -E '^[A-Z]\:\/?|File' | awk '{ print $4 }' | head -1 | tr -d '\r '`
+	size=`df -H | grep -E '^[A-Z]\:\/?|File' | awk '{ print $2 }' | sed -n '2p' | tr -d '\r '`
+	free=`df -H |  grep -E '^[A-Z]\:\/?|File' | awk '{ print $4 }' | sed -n '2p' | tr -d '\r '`
 	[[ "$debug" -eq "1" ]] && Debug "Finding HDD Size, and Free Space.... Found as: '$free / $size'"
 }
 
