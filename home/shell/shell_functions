@@ -1,0 +1,38 @@
+#!bin/sh
+function about() 
+{
+cat <<EOF
+#####################################
+# The Ultimate Bashrc File			#
+# .bashrc					        #
+# Creator: yuwillsee		        #
+# Version: 1.0			 		    #
+# Ressources in shell				#
+#####################################
+EOF
+}
+
+function sshconnect_usage() 
+{
+MSG="usage : $0 [[[-u user] [-s server]] | [-h help]]"
+while [ "$1" != "" ]; do 
+    case "$1" in
+        -u|--user)           
+            shift
+            user=$1
+            echo $user
+            ;;
+        -s|--server)
+            shift         
+            server=$1
+            ssh $user@$server
+            ;;
+        -h|--help)
+            echo $MSG
+            ;;
+        *)
+            echo $MSG
+    esac
+    shift
+done
+}

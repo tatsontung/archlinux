@@ -173,8 +173,12 @@ OS=$(uname)		# for resolving pesky os differing switches
 #  the description of the shopt command under SHELL BUILTIN COMMANDS
 #  below).
 
-if [ -f ~/shell/shell_colors ]; then
-    . ~/shell/shell_colors
+if [ -f shell/shell_colors ]; then
+    . ./shell/shell_colors
+fi
+
+if [ -f shell/shell_functions ]; then
+    . ./shell/shell_functions
 fi
 
 ######################################
