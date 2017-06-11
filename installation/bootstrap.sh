@@ -10,4 +10,4 @@ sudo pacman -Sy atom guake git subversion screenfetch cowsay cowfortune fortune-
 sudo pacman -Sy docker docker-compose docker-machine vagrant virtualbox
 
 # Atom package
-apm install minimap file-icons autocomplete-modules color-picker pigments git-plus
+apm install minimap file-icons autocomplete-modules color-picker pigments git-plus platformio-ide-terminal autosave atom-beautify atom-monokai monokai
