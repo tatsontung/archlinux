@@ -17,7 +17,7 @@
   - [If problem:](#if-problem)
   - [For error known session:](#for-error-known-session)
 - [Install Steam](#install-steam)
-  - [Solución a problema SetLocale(‘en_US.UTF-8’) failed. Using 'C'](#soluci%C3%B3n-a-problema-setlocale%E2%80%98en_usutf-8%E2%80%99-failed-using-c)
+  - [Solution for setlocale(‘en_US.UTF-8’) failed. Using 'C'](#solution-for-setlocale-failed-using-c)
 - [Install nampac (package analyzer) (OPTIONAL)](#install-nampac-package-analyzer-optional)
 - [Open Broadcaster](#open-broadcaster)
 - [Spotify](#spotify)
@@ -130,13 +130,13 @@ After edit file `/etc/default/grub` and add `rcutree.rcu_idle_gp_delay=1` to the
 sudo pacman -S steam
 ```
 
-### Solución a problema SetLocale(‘en_US.UTF-8’) failed. Using 'C'
+### Solution for setlocale failed using c
 ```sh
 sudo nano /etc/locale.gen
 ```
-Descomentar idioma `en_US.UTF-8 UTF-8`.
+Decomments this line `en_US.UTF-8 UTF-8`.
 
-Actualizar con:
+Actualise scripts:
 ```sh
 sudo locale-gen
 ```
@@ -197,7 +197,6 @@ v: stop
 x: stop and play
 ```
 
-
 ## Java JDK (OpenJDK)
 ```sh
 sudo pacman -S jdk8-openjdk
@@ -243,7 +242,9 @@ sudo pacman -S icedtea-web
 ```
 
 ## System-Monitor applet for GNOME 3
-```sh
+```shdo pacman-key --init
+sudo pacman-key --populate archlinux
+sudo  pacman-key --refresh-keys
 yaourt -S gnome-shell-system-monitor-applet-git
 ```
 
@@ -377,4 +378,13 @@ sudo pacman -S screen
 ```sh
 sudo pacman -S texlive-most texlive-lang
 sudo pacman -S texstudio
+```
+
+## For update failed with keys gpn check failed
+```sh
+sudo pacman -Scc
+sudo pacman-key --init
+sudo pacman -Sy antergos-keyring
+sudo pacman-key --populate archlinux
+sudo pacman-key --refresh-keys
 ```
