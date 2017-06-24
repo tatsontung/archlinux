@@ -12,6 +12,12 @@ cat <<EOF
 EOF
 }
 
+functionssh_agent()
+{
+  eval "$(ssh-agent -s)"
+  ssh-add ~/.ssh/id_rsa
+}
+
 function sshconnect_usage()
 {
 MSG="usage : $0 [[[-u user] [-s server]] | [-h help]]"

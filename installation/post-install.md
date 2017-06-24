@@ -53,7 +53,7 @@
 - [Markdown Table of Content Generator](#markdown-table-of-content-generator)
 - [Install Screen (Full-screen window manager that multiplexes a physical terminal)](#install-screen-full-screen-window-manager-that-multiplexes-a-physical-terminal)
 - [LaTeX and TexStudio Graphic Editor](#latex-and-texstudio-graphic-editor)
-
+- [Antergos Keyring](#for-update-failed-with-keys-gpn-check-failed)
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Update
@@ -385,6 +385,17 @@ sudo pacman -S texstudio
 sudo pacman -Scc
 sudo pacman-key --init
 sudo pacman -Sy antergos-keyring
-sudo pacman-key --populate archlinux
+sudo pacman-key --populate archlinux antergos
 sudo pacman-key --refresh-keys
+```
+When keyring gpg problem
+```sh
+nano /etc/pacman.conf
+Search SigLevel then remplace Required to Never
+```
+
+## Development Scripts installation
+```sh
+wget https://github.com/suan/vim-instant-markdown/after/ftplugin/markdown/instant-markdown.vim ~/.vim/after/ftplugin/markdown/instant-markdown.vim
+npm -g install instant-markdown-d
 ```
