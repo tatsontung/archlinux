@@ -1,0 +1,76 @@
+#!bin/sh
+function about()
+{
+cat <<EOF
+#####################################
+# The Ultimate Bashrc File			#
+# .bashrc					        #
+# Creator: yuwillsee		        #
+# Version: 1.0			 		    #
+# Ressources in shell				#
+#####################################
+EOF
+}
+
+functionssh_agent()
+{
+  eval "$(ssh-agent -s)"
+  ssh-add ~/.ssh/id_rsa
+}
+
+function sshconnect_usage()
+{
+MSG="usage : $0 [[[-u user] [-s server]] | [-h help]]"
+while [ "$1" != "" ]; do
+    case "$1" in
+        -u|--user)
+            shift
+            user=$1
+            echo $user
+            ;;
+        -s|--server)
+            shift
+            server=$1
+            ssh $user@$server
+            ;;
+        -h|--help)
+            echo $MSG
+            ;;
+        *)
+            echo $MSG
+    esac
+    shift
+done
+}
+
+function 256colors()
+{
+  for fgbg in 38 48 ; do #Foreground/Background
+  	for color in {0..256} ; do #Colors
+  		#Display the color
+  		echo -en "\e[${fgbg};5;${color}m ${color}\t\e[0m"
+  		#Display 10 colors per lines
+  		if [ $((($color + 1) % 10)) == 0 ] ; then
+  			echo #New line
+  		fi
+  	done
+  	echo #New line
+  done
+  exit 0
+}
+
+function 256colors_formatting()
+{
+  for clbg in {40..47} {100..107} 49 ; do
+  	#Foreground
+  	for clfg in {30..37} {90..97} 39 ; do
+  		#Formatting
+  		for attr in 0 1 2 4 5 7 ; do
+  			#Print the result
+  			echo -en "\e[${attr};${clbg};${clfg}m ^[${attr};${clbg};${clfg}m \e[0m"
+  		done
+  		echo #Newline
+  	done
+  done
+  exit 0
+}
