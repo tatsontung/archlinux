@@ -12,7 +12,6 @@ echo "Setting up a '$SETUP_TYPE' machine..."
 
 source ${MY_DIR}/${SETUP_TYPE}/bootstrap.sh
 
-# Note: Homebrew needs to be set up first
 source ${MY_DIR}/configuration-bash.sh
 cp ${MY_DIR}/zshrc ~/.zshrc
 chsh -s `which zsh`
@@ -22,3 +21,5 @@ source ${MY_DIR}/java.sh
 
 source ${MY_DIR}/configurations.sh
 source ${MY_DIR}/finished.sh
+
+set e
