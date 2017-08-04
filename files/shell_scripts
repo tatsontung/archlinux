@@ -1,4 +1,0 @@
-#!bin/sh
-sed -i.bak 's/\.\/build\/libs\/packaging\-0\.0\.1\-SNAPSHOT/app/g' packaging.yml
-zip -r folder.zip folder
-/usr/local/etc/cntlm.conf

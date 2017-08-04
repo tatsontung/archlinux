@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Vim
 echo
 echo "Installing vim configuration"

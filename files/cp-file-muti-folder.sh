@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 for dir in *; do [ -d "$dir" ] && cp /path/file.txt "$dir" ; done
 for dir in *; do [ -d "$dir" ] && cp Darkdreamer/layout-local.txt "$dir" ; done
 for dir in *; do [ -d "$dir" ] && mv "$dir"/*.mp4 . ; done
