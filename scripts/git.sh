@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 echo
 echo "Installing Git and associated tools"
 
