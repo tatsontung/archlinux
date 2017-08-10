@@ -6,4 +6,3 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 
 cp files/dircolors.ansi-dark ~/.dircolors
 cp files/npmrc ~/.npmrc
-cp files/dircolors.ansi-dark ~/.dircolors
