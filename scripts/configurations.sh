@@ -16,5 +16,5 @@ pigments git-plus platformio-ide-terminal autosave atom-beautify atom-monokai mo
 
 # Visual Studio Code
 echo "Install VSC plugins"
-code --install-extension PKief.material-icon-theme
-code --install-extension bbenoist.vagrant
+#code --install-extension PKief.material-icon-theme
+#code --install-extension bbenoist.vagrant
