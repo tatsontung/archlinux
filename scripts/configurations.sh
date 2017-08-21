@@ -9,12 +9,29 @@ if [ ! -d ~/.vim ]; then
 fi
 popd
 
-# Atom
+echo "Installing custom fonts"
+pushd ~/
+if [ ! -d ~/.fonts-custom ]; then
+  git clone https://github.com/victorfu/fonts ~/.fonts-custom
+  ~/.fonts-custom/install.sh
+fi
+popd
+
+echo "Install custom zsh and dircolors"
+cp files/dircolors.ansi-dark ~/.dircolors
+cp files/zshrc ~/.zshrc
+
+echo "Install tilix color shemes"
+pushd ~/
+if [ ! -d ~/.config/tilix/shemes ]; then
+  mkdir -p ~/.config/tilix/schemes/
+  wget -qO $HOME"/.config/tilix/schemes/homebrew.json" https://git.io/v7Qa4
+fi
+
 echo "Install atom package and extensions"
 apm install minimap file-icons autocomplete-modules color-picker \
 pigments git-plus platformio-ide-terminal autosave atom-beautify atom-monokai monokai
 
-# Visual Studio Code
-echo "Install VSC plugins"
+echo "Install Visual Studio Code plugins"
 #code --install-extension PKief.material-icon-theme
 #code --install-extension bbenoist.vagrant
