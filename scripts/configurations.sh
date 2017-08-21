@@ -21,12 +21,14 @@ echo "Install custom zsh and dircolors"
 cp files/dircolors.ansi-dark ~/.dircolors
 cp files/zshrc ~/.zshrc
 
-echo "Install tilix color shemes"
+echo "Install tilix color shemes and load themes"
 pushd ~/
 if [ ! -d ~/.config/tilix/shemes ]; then
   mkdir -p ~/.config/tilix/schemes/
   wget -qO $HOME"/.config/tilix/schemes/homebrew.json" https://git.io/v7Qa4
 fi
+popd
+dconf load /com/gexperts/Tilix/ < files/terminix.dconf
 
 echo "Install atom package and extensions"
 apm install minimap file-icons autocomplete-modules color-picker \
