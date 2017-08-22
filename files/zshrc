@@ -120,4 +120,4 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
   source /etc/profile.d/vte.sh
 fi
 
- eval `dircolors ~/.dircolors`
+eval `dircolors ~/.dircolors`
