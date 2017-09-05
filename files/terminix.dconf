@@ -1,0 +1,22 @@
+[/]
+quake-height-percent=90
+prompt-on-close=true
+terminal-title-style='small'
+theme-variant='system'
+enable-wide-handle=false
+warn-vte-config-issue=false
+terminal-title-show-when-single=false
+window-style='borderless'
+
+[profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
+foreground-color='#00FF00'
+login-shell=true
+palette=['#000000', '#990000', '#00A600', '#999900', '#0000B2', '#B200B2', '#00A6B2', '#BFBFBF', '#666666', '#E50000', '#00D900', '#E5E500', '#0000FF', '#E500E5', '#00E5E5', '#E5E5E5']
+badge-color-set=false
+use-system-font=false
+cursor-colors-set=false
+highlight-colors-set=false
+use-theme-colors=false
+bold-color-set=false
+font='Ubuntu Mono derivative Powerline 12'
+background-color='#000000'
