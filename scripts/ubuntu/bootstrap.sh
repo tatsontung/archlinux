@@ -17,10 +17,10 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt -y --force-yes update
 sudo apt -y --force-yes upgrade
 sudo apt -y --force-yes install vim curl htop lsof git memcached build-essential \
-python mongodb docker docker-compose vagrant virtualbox tilix \
+python mongodb docker docker-compose vagrant virtualbox terminix nginx \
 screenfetch cowsay fortune-mod zsh atom nodejs \
 openjdk-8-jdk ubuntu-make
-umake android --accept-license
+#umake android android-studio
 umake ide idea
 umake ide visual-studio-code --accept-license
-umake go
+#umake go
