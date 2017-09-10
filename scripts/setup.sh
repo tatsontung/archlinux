@@ -13,8 +13,8 @@ echo "Setting up a '$SETUP_TYPE' machine..."
 source ${MY_DIR}/${SETUP_TYPE}/bootstrap.sh
 source ${MY_DIR}/git.sh
 source ${MY_DIR}/configurations.sh
-source ${MY_DIR}/configuration-bash.sh
 source ${MY_DIR}/node.sh
+source ${MY_DIR}/configuration-bash.sh
 source ${MY_DIR}/finished.sh
 
 set e
