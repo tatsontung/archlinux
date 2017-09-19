@@ -10,14 +10,15 @@
 echo "add atom and intellij-idea-community android-studio in umake repos"
 sudo add-apt-repository ppa:webupd8team/atom
 sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
+sudo add-apt-repository ppa:webupd8team/terminix
 
 echo "add node repos"
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 
 sudo apt -y --force-yes update
 sudo apt -y --force-yes upgrade
 sudo apt -y --force-yes install vim curl htop lsof git memcached build-essential \
-python mongodb docker docker-compose vagrant virtualbox terminix nginx \
+python mongodb docker docker-compose vagrant virtualbox terminix maven gradle nginx \
 screenfetch cowsay fortune-mod zsh atom nodejs \
 openjdk-8-jdk ubuntu-make
 #umake android android-studio
