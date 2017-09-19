@@ -25,3 +25,6 @@ openjdk-8-jdk ubuntu-make
 umake ide idea
 umake ide visual-studio-code --accept-license
 #umake go
+echo "Installing mvn"
+
+sudo apt install mvn
