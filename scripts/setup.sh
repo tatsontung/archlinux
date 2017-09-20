@@ -16,5 +16,7 @@ source ${MY_DIR}/configurations.sh
 source ${MY_DIR}/node.sh
 source ${MY_DIR}/configuration-bash.sh
 source ${MY_DIR}/finished.sh
+source ${MY_DIR}/sysctls.sh
+
 
 set e
