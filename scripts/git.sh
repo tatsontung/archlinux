@@ -30,3 +30,7 @@ git config --global alias.fixup commit --fixup
 git config --global alias.squash commit --squash
 git config --global alias.unstage reset HEAD
 git config --global alias.rum "rebase master@{u}"
+
+echo
+echo "Setting default (simple) git push behavior..."
+git config --global push.default simple
