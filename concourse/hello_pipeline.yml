@@ -1,0 +1,12 @@
+jobs:
+ - name: helloworld-pipeline
+   plan:
+     - task: hello_tasks
+       config:
+         platform: linux
+         image_resource:
+           type: docker-image
+           source: {repository: alpine}
+         run:
+           path: echo
+           args: [hello world]
