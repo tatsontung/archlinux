@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "setting sysctls to 9001!!!"
+echo "setting sysctl to 9001!!!"
 
 # le choix, c'est aletoire
 # c'est important que ce numero est plus que
