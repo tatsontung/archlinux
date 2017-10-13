@@ -5,6 +5,11 @@ echo "Done!"
 echo "-----------------------------------------"
 
 echo
+echo "Copy zsh configuration"
+
+cp files/zshrc ~/.zshrc
+
+echo
 echo "If hostname needs to be set consider"
 echo "sudo scutil --set ComputerName newname"
 echo "sudo scutil --set LocalHostName newname"

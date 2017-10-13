@@ -17,9 +17,8 @@ if [ ! -d ~/.fonts-custom ]; then
 fi
 popd
 
-echo "Install custom zsh and dircolors"
+echo "Install custom dircolors"
 cp files/dircolors.ansi-dark ~/.dircolors
-cp files/zshrc ~/.zshrc
 
 echo "Install tilix color shemes and load themes"
 pushd ~/
