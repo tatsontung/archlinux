@@ -4,7 +4,7 @@ EXTERNAL_URL_HOST_NAME="$1"
 ADMIN_USERNAME="$2"
 ADMIN_PASSWORD="$3"
 
-CONCOURSE_VERSION=${CONCOURSE_VERSION:-v1.4.1}
+CONCOURSE_VERSION=${CONCOURSE_VERSION:-v3.5.0}
 
 apt-get update
 apt-get install -y postgresql postgresql-contrib
