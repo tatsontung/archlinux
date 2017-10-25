@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 
 services:
   concourse-db:
@@ -10,7 +10,7 @@ services:
       PGDATA: /database
 
   concourse-web:
-    image: concourse/concourse
+    image: concourse/concourse:3.5.0
     links: [concourse-db]
     command: web
     depends_on: [concourse-db]
@@ -25,11 +25,11 @@ services:
       CONCOURSE_POSTGRES_USER: concourse
       CONCOURSE_POSTGRES_PASSWORD: changeme
       CONCOURSE_POSTGRES_DATABASE: concourse
-      http_proxy: http://localhost:3128
-      https_proxy: http://localhost:3128
+      http_proxy: http:/10.177.102.84:3128
+      https_proxy: http://10.177.102.84:3128
 
   concourse-worker:
-    image: concourse/concourse
+    image: concourse/concourse:3.5.0
     privileged: true
     links: [concourse-web]
     depends_on: [concourse-web]
@@ -38,5 +38,5 @@ services:
     environment:
       CONCOURSE_TSA_HOST: concourse-web
       CONCOURSE_GARDEN_DNS_SERVER: 8.8.8.8
-      http_proxy: http://localhost:3128
-      https_proxy: http://localhost:3128
+      http_proxy: http://10.177.102.84:3128
+      https_proxy: http://10.177.102.84:3128
