@@ -8,8 +8,9 @@ cat >/etc/systemd/system/minio.service <<-EOF
 Description=Minio S3 Service
 After=postgres.service
 [Service]
-ExecStart=/usr/local/bin/minio server \
---address localhost:6123 /home/concourse-ws/minio
+EnvironmentFile=-/etc/default/minio
+ExecStartPre=/bin/bash -c "[ -n \"${MINIO_VOLUMES}\" ] || echo \"Variable MINIO_VOLUMES not set in /etc/default/minino\""
+ExecStart=/usr/local/bin/minio server $MINIO_OPTS $MINIO_VOLUMES
 Type=simple
 [Install]
 WantedBy=default.target
