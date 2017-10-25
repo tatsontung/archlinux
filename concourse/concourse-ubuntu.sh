@@ -31,13 +31,13 @@ Description=Concourse CI Web
 After=postgres.service
 [Service]
 ExecStart=/usr/local/bin/concourse web \
-       --basic-auth-username "$ADMIN_USERNAME" \
-       --basic-auth-password "$ADMIN_PASSWORD" \
-       --session-signing-key /etc/concourse/session_signing_key \
-       --tsa-host-key /etc/concourse/host_key \
-       --tsa-authorized-keys /etc/concourse/authorized_worker_keys \
-       --external-url "http://$EXTERNAL_URL_HOST_NAME:8080" \
-       --postgres-data-source 'postgres:///concourse?host=/var/run/postgresql'
+--basic-auth-username "$ADMIN_USERNAME" \
+--basic-auth-password "$ADMIN_PASSWORD" \
+--session-signing-key /etc/concourse/session_signing_key \
+--tsa-host-key /etc/concourse/host_key \
+--tsa-authorized-keys /etc/concourse/authorized_worker_keys \
+--external-url "http://$EXTERNAL_URL_HOST_NAME:8080" \
+--postgres-data-source 'postgres:///concourse?host=/var/run/postgresql'
 User=concourse
 Group=concourse
 Type=simple
@@ -49,13 +49,12 @@ cat >/etc/systemd/system/concourse_worker.service <<-EOF
 [Unit]
 Description=Concourse CI Worker
 After=concourse_web.service
-
 [Service]
 ExecStart=/usr/local/bin/concourse worker \
-       --work-dir /var/lib/concourse \
-       --tsa-host localhost \
-       --tsa-public-key /etc/concourse/host_key.pub \
-       --tsa-worker-private-key /etc/concourse/worker_key
+--work-dir /var/lib/concourse \
+--tsa-host localhost \
+--tsa-public-key /etc/concourse/host_key.pub \
+--tsa-worker-private-key /etc/concourse/worker_key
 User=root
 Group=root
 Type=simple
