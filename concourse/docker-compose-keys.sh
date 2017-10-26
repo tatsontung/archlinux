@@ -25,3 +25,9 @@ EOF
 # Reload service configuration and show config
 sudo systemctl daemon-reloead
 sudo systemctl show --property=Environment docker
+
+# To start a docker local registry
+sudo docker run -d -p 5000:5000 --restart=always --name registry registry:2
+
+# To delete docker local registry
+# sudo docker stop registry && sudo docker rm -v registry
