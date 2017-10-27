@@ -56,6 +56,7 @@ ExecStart=/usr/local/bin/concourse worker \
 --tsa-public-key /etc/concourse/host_key.pub \
 --tsa-worker-private-key /etc/concourse/worker_key \
 --baggageclaim-log-level debug --garden-log-level debug \
+--http-proxy "http://10.0.2.2:3128" --https-proxy "http://10.0.2.2:3128" \
 --garden-dns-server 8.8.8.8 --garden-dns-server 10.171.108.2
 User=root
 Group=root

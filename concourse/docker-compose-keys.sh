@@ -23,7 +23,7 @@ Environment="HTTP_PROXY=http://127.0.0.1:3128/" "NO_PROXY=localhost"
 EOF
 
 # Reload service configuration and show config
-sudo systemctl daemon-reloead
+sudo systemctl daemon-reload
 sudo systemctl show --property=Environment docker
 
 # To start a docker local registry
