@@ -12,9 +12,11 @@ echo "Setting up a '$SETUP_TYPE' machine..."
 
 source ${MY_DIR}/${SETUP_TYPE}/bootstrap.sh
 source ${MY_DIR}/git.sh
-source ${MY_DIR}/configurations.sh
+source ${MY_DIR}/tilix.sh
+source ${MY_DIR}/config.sh
+source ${MY_DIR}/vim.sh
 source ${MY_DIR}/node.sh
-source ${MY_DIR}/configuration-bash.sh
+source ${MY_DIR}/zsh.sh
 source ${MY_DIR}/finished.sh
 source ${MY_DIR}/sysctl.sh
 
