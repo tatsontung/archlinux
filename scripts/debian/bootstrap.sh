@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Get root up in here
-sudo su
+# sudo su
 
 # Configuration for cntlm proxy parser
 # echo 'Acquire::http::Proxy "http://10.0.2.2:3128";' >> /etc/apt/apt.conf.d/99proxy
