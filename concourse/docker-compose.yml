@@ -2,7 +2,7 @@ version: '2'
 
 services:
   concourse-db:
-    image: postgres:9.5
+    image: postgres:9.6
     environment:
       POSTGRES_DB: concourse
       POSTGRES_USER: concourse
@@ -10,7 +10,7 @@ services:
       PGDATA: /database
 
   concourse-web:
-    image: concourse/concourse:3.5.0
+    image: concourse/concourse:3.8.0
     links: [concourse-db]
     command: web
     depends_on: [concourse-db]
@@ -20,7 +20,7 @@ services:
     environment:
       CONCOURSE_BASIC_AUTH_USERNAME: concourse
       CONCOURSE_BASIC_AUTH_PASSWORD: changeme
-      CONCOURSE_EXTERNAL_URL: "10.39.9.94"
+      CONCOURSE_EXTERNAL_URL: "http://10.177.102.84:8080"
       CONCOURSE_POSTGRES_HOST: concourse-db
       CONCOURSE_POSTGRES_USER: concourse
       CONCOURSE_POSTGRES_PASSWORD: changeme
@@ -29,7 +29,7 @@ services:
       https_proxy: http://10.177.102.84:3128
 
   concourse-worker:
-    image: concourse/concourse:3.5.0
+    image: concourse/concourse:3.8.0
     privileged: true
     links: [concourse-web]
     depends_on: [concourse-web]
@@ -38,5 +38,10 @@ services:
     environment:
       CONCOURSE_TSA_HOST: concourse-web
       CONCOURSE_GARDEN_DNS_SERVER: 8.8.8.8
+      CONCOURSE_GARDEN_DNS_SERVER: 10.171.108.2
       http_proxy: http://10.177.102.84:3128
       https_proxy: http://10.177.102.84:3128
+    dns:
+      - 8.8.8.8
+      - 8.8.8.4
+      - 10.171.108.2
