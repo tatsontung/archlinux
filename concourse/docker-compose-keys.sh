@@ -1,5 +1,6 @@
 #!/bin/sh
 # Configuration for the key using between the worker and the web
+mkdir -p keys/web keys/worker
 mkdir -p /keys/web /keys/worker
 
 ssh-keygen -t rsa -f keys/web/tsa_host_key -N '' && \
