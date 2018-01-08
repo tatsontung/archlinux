@@ -15,6 +15,11 @@ RUN add-apt-repository "deb https://dl.google.com/linux/chrome/deb/ stable main"
    && apt-get update \
    && apt-get install -y google-chrome-stable
 
+# Install XVFB -> required for running chrome in mode frameless, which is required for document downloads
+# Install Java -> for Selenium Standalone server
+# RUN echo 'Acquire::http::Proxy "http://127.0.0.1:3128";' >> /etc/apt/apt.conf.d/99proxy
+RUN apt-get install -y openjdk-8-jdk xvfb
+
 # Install Node JS for Ubuntu
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get update \
