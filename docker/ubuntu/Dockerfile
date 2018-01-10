@@ -2,7 +2,7 @@ FROM ubuntu:xenial
 
 # Update base system
 RUN apt-get update
-Run apt-get install -y software-properties-common apt-transport-https build-essential wget curl net-tools nano bash
+Run apt-get install -y software-properties-common apt-transport-https build-essential wget curl net-tools nano bash openjdk-8-jdk xvfb
 
 # Add Google package signing key for chrome
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
@@ -18,7 +18,6 @@ RUN add-apt-repository "deb https://dl.google.com/linux/chrome/deb/ stable main"
 # Install XVFB -> required for running chrome in mode frameless, which is required for document downloads
 # Install Java -> for Selenium Standalone server
 # RUN echo 'Acquire::http::Proxy "http://127.0.0.1:3128";' >> /etc/apt/apt.conf.d/99proxy
-RUN apt-get install -y openjdk-8-jdk xvfb
 
 # Install Node JS for Ubuntu
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
