@@ -2,7 +2,7 @@ FROM ubuntu:xenial
 
 # Update base system
 RUN apt-get update
-Run apt-get install -y software-properties-common apt-transport-https build-essential wget curl net-tools nano bash openjdk-8-jdk xvfb
+RUN apt-get install -y software-properties-common apt-transport-https build-essential wget curl net-tools nano bash openjdk-8-jdk xvfb
 
 # Add Google package signing key for chrome
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
