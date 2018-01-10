@@ -9,3 +9,4 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 echo
 echo "Copy zsh configuration"
 cp files/zshrc ~/.zshrc
+cp files/custom.zsh ~/.oh-my-zsh/custom/
