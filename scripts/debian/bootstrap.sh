@@ -11,3 +11,13 @@ sudo apt -y --force-yes update
 sudo apt -y --force-yes upgrade
 sudo apt -y --force-yes install vim curl htop lsof git memcached build-essential \
 python mongodb docker docker-compose screenfetch cowsay fortune-mod zsh tmux
+
+# Installation docker engine CE
+sudo apt-get install apt-transport-https dirmngr
+sudo add-apt-repository 'deb https://apt.dockerproject.org/repo debian-stretch main'
+sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+sudo apt-get update
+sudo apt-get install docker-engine
+
+# Numix Theme and Icons
+sudo apt install numix-gtk-theme numix-icon-theme
