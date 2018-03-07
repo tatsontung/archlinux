@@ -2,7 +2,7 @@ FROM node:8-alpine
 
 # Install multiple packages :
 RUN apk update && apk upgrade
-RUN apk add --update --no-cache make gcc g++ python git && \
+RUN apk add --update --no-cache bash tzdata make gcc g++ python git tzdata && \
   rm -rf /tmp/* /var/cache/apk/*
 
 # Update apk repositories
@@ -44,5 +44,11 @@ RUN rm -rf /var/lib/apt/lists/* \
 
 ENV CHROME_BIN=/usr/bin/chromium-browser
 ENV CHROME_PATH=/usr/lib/chromium/
+
+# Update timezone and clean things
+RUN cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
+RUN echo "Europe/Paris" >  /etc/timezone
+RUN date
+RUN apk del tzdata
 
 CMD sh
