@@ -1,25 +1,7 @@
 authors:
   tat: Tat Son Tung NGUYEN
-  jsc: Jean-Sébastien Calvier; jeansebastien.calvier
-  np: Nicolas Phou; nicolas.phou
-  cmcg: Carlos Miguel Camargo Gomez; carlosmiguel.camargogomez
-  be: Bassel Ezzedine; bassel.ezzedine
-  sb: Solène Beuzon; solene.beuzon
-  cp: Claude Peris; claude.peris
   tng : Tat Son Tung Nguyen; tatsontung.nguyen
-  od: Olivier Declercq; olivier.declercq
-  drh: Delphine Reboul-Haguenauer; delphine.reboulhaguenauer
-  lm: Laurence Messiant; laurence.messiant
-  gb: Gibraïl Berdouk; gibrail.berdouk
-  cs: Callum Stott
-  km: Katie Moulang
-  av: Alexandre Vasseurc²
-  tj: Tim Jarratt; tjarratt
 email:
-  domain: orange.com
+  domain: noreplay.auto.com
 email_addresses:
-  tat: tatsontung.nguyen@gmail.com
-  cs: cstott@pivotal.io
-  km: kmoulang@pivotal.io
-  av: avasseur@pivotal.io
-  tj: tjarratt@pivotal.io
+  tat: tatsontung.nguyen@noreply.com
