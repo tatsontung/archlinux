@@ -1,11 +1,16 @@
 # Linux Workstation automation scripts
 
+Once cloning this repo, use the script
+
 ## Debian && Ubuntu spec
 
-### Security Key
 ```bash
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
+./ubuntu.sh
+./debian.sh
 ```
 
 ## Archlinux
+
+```bash
+./archlinux.sh
+```
