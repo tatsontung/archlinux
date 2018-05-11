@@ -21,3 +21,4 @@ sudo apt-get install docker-engine
 
 # Numix Theme and Icons
 sudo apt install numix-gtk-theme numix-icon-theme
+

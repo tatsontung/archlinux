@@ -121,3 +121,6 @@ screenfetch
 # fi
 
 eval `dircolors ~/.dircolors`
+# Set up Node Version Manager
+source /usr/share/nvm/init-nvm.sh
+bash $ZSH/custom/welcome.sh
