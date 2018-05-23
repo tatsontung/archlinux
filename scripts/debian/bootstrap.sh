@@ -10,7 +10,7 @@
 sudo apt -y --force-yes update
 sudo apt -y --force-yes upgrade
 sudo apt -y --force-yes install vim curl htop lsof git memcached build-essential \
-python mongodb docker docker-compose screenfetch cowsay fortune-mod zsh tmux
+python mongodb docker docker-compose screenfetch cowsay fortune-mod zsh tmux ranger mc
 
 # Installation docker engine CE
 sudo apt-get install apt-transport-https dirmngr
@@ -22,3 +22,7 @@ sudo apt-get install docker-engine
 # Numix Theme and Icons
 sudo apt install numix-gtk-theme numix-icon-theme
 
+echo "Installing gnome-keyring-dev"
+sudo apt-get install libgnome-keyring-dev
+cd /usr/share/doc/git/contrib/credential/gnome-keyring
+sudo make

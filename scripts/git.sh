@@ -34,3 +34,4 @@ git config --global alias.rum "rebase master@{u}"
 echo
 echo "Setting default (simple) git push behavior..."
 git config --global push.default simple
+git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
