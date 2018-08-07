@@ -9,16 +9,6 @@
 sudo apt -y --force-yes update
 sudo apt -y --force-yes upgrade
 sudo apt -y --force-yes install vim curl htop lsof git memcached build-essential \
-python docker docker-compose vagrant virtualbox maven gradle nginx \
-screenfetch cowsay fortune-mod zsh  chromium-browser openjdk-8-jdk cmus \
+python docker docker-compose nginx tilix \
+screenfetch cowsay fortune-mod zsh maven gradle chromium-browser openjdk-8-jdk cmus \
 taskwarrior copyq numix-icon-theme numix-gtk-theme ranger mc
-
-echo "Installing node"
-sudo curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-
-sudo apt -y --force-yes install nodejs
-
-echo "Installing gnome-keyring-dev"
-sudo apt-get install libgnome-keyring-dev
-cd /usr/share/doc/git/contrib/credential/gnome-keyring
-sudo make
