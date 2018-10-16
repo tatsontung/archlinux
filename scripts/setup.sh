@@ -20,6 +20,5 @@ source ${MY_DIR}/vim.sh
 source ${MY_DIR}/zsh.sh
 source ${MY_DIR}/finished.sh
 source ${MY_DIR}/sysctl.sh
-source ${MY_DIR}/postman.sh
 
 set e

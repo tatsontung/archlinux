@@ -108,7 +108,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="vim ~/.oh-my-zsh"
 # alias reload="source ~/.zshrc"
 
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 export PATH=$HOME/.npm-packages/bin:$PATH
+export CHROME_BIN=/usr/bin/chromium-browser
+export CHROME_PATH=/usr/lib/chromium
 
 echo ""
 fortune | cowsay -n
