@@ -1,13 +1,13 @@
 #!/bin/sh
 
-echo 'Setup docker daemon' 
+sudo echo 'Setup docker daemon' 
 cat >/etc/docker/daemon.json <<-EOF
 {
         "insecure-registries" : ["10.177.102.84:5000"]
 }
 EOF
 
-echo 'Setup docker proxy'
+sudo echo 'Setup docker proxy'
 #/etc/systemd/system/docker.service.d/http-proxy.conf
 mkdir -p /etc/systemd/system/docker.service.d
 
