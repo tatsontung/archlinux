@@ -83,7 +83,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -108,6 +108,22 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="vim ~/.oh-my-zsh"
 # alias reload="source ~/.zshrc"
 
+alias vi='vim'
+alias zshreload="source ~/.zshrc"
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+
+#dockers
+alias dockercontainerclean='docker rm $(docker ps -qa --no-trunc --filter "status=exited")'
+alias dockerimageclean='docker images --filter dangling=true -q | xargs docker rmi'
+
+# proxy madness
+alias proxyon='export http_proxy="http://127.0.0.1:3128"; export https_proxy="http://127.0.0.1:3128"'
+alias proxyoff="export http_proxy=;export https_proxy= "
+alias gitproxyon="git config --global http.proxy http://127.0.0.1:3128"
+alias gitproxyoff="git config --global --unset http.proxy"
+alias sshagent="eval $(ssh-agent -s)"
+
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 export PATH=$HOME/.npm-packages/bin:$PATH
 export CHROME_BIN=/usr/bin/chromium-browser
@@ -124,6 +140,14 @@ screenfetch
 # fi
 
 eval `dircolors ~/.dircolors`
-# Set up Node Version Manager
-source /usr/share/nvm/init-nvm.sh
+
 bash $ZSH/custom/welcome.sh
+
+# Set up Node Version Manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/tofino/.sdkman"
+[[ -s "/home/tofino/.sdkman/bin/sdkman-init.sh" ]] && source "/home/tofino/.sdkman/bin/sdkman-init.sh"

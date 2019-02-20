@@ -17,8 +17,9 @@ source ${MY_DIR}/git-duet.sh
 source ${MY_DIR}/tilix.sh
 source ${MY_DIR}/config.sh
 source ${MY_DIR}/vim.sh
-source ${MY_DIR}/zsh.sh
-source ${MY_DIR}/finished.sh
+source ${MY_DIR}/sdkman.sh
+source ${MY_DIR}/vscode.sh
 source ${MY_DIR}/sysctl.sh
-
+source ${MY_DIR}/postman.sh
+source ${MY_DIR}/zsh.sh
 set e

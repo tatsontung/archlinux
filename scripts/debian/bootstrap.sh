@@ -7,10 +7,12 @@
 # echo 'Acquire::http::Proxy "http://10.0.2.2:3128";' >> /etc/apt/apt.conf.d/99proxy
 
 # Update and begin installing some utility tools
-sudo apt -y --force-yes update
-sudo apt -y --force-yes upgrade
-sudo apt -y --force-yes install vim curl htop lsof git memcached build-essential \
-python mongodb docker docker-compose screenfetch cowsay fortune-mod zsh tmux ranger mc
+sudo apt -y --allow-downgrades --allow-remove-essential --allow-change-held-packages update
+sudo apt -y --allow-downgrades --allow-remove-essential --allow-change-held-packages upgrade
+sudo apt -y --allow-downgrades --allow-remove-essential --allow-change-held-packages install \
+vim curl htop lsof git memcached build-essential \
+python mongodb docker docker-compose screenfetch \
+cowsay fortune-mod zsh tmux ranger mc tty-clock httpie
 
 # Installation docker engine CE
 sudo apt-get install apt-transport-https dirmngr
