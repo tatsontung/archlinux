@@ -1,2 +1,0 @@
-cache=${HOME}/.npm-cache
-prefix=${HOME}/.npm-packages

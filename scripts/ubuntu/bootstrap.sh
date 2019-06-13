@@ -9,12 +9,11 @@
 sudo apt -y --allow-downgrades --allow-remove-essential --allow-change-held-packages update
 sudo apt -y --allow-downgrades --allow-remove-essential --allow-change-held-packages upgrade
 sudo apt -y --allow-downgrades --allow-remove-essential --allow-change-held-packages install \
-vim curl htop lsof git memcached build-essential \
+vim curl htop httpie lsof git memcached build-essential \
 python docker docker-compose nginx tilix stterm tmux tty-clock \
-screenfetch cowsay fortune-mod zsh chromium-browser openjdk-8-jdk cmus \
-taskwarrior copyq numix-icon-theme numix-gtk-theme ranger mc httpie \
-i3-wm dunst i3lock i3status suckless-tools \
-compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnior
+neofetch zsh chromium-browser openjdk-8-jdk cmus \
+taskwarrior copyq numix-icon-theme numix-gtk-theme ranger mc  \
+fonts-noto fonts-mplus
 
 # Snap is an universal packages manager
 sudo snap install code --classic
