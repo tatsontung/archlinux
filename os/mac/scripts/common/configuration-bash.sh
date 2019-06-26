@@ -6,6 +6,7 @@ brew install coreutils
 brew install rbenv
 brew install watch
 cp files/dircolors.ansi-dark ~/.dircolors
+pwd
 cp files/.inputrc ~/.inputrc
 rm -rf ~/.bash_it
 export BASH_IT="$HOME/.bash_it"
