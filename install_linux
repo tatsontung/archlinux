@@ -30,7 +30,7 @@ fi
 distribution=ubuntu
 environment=external
 
-while getopts hs:i: opt; do
+while getopts hd:e: opt; do
     case $opt in
         h)
             show_help 0

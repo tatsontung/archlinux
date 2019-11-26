@@ -16,7 +16,6 @@ function install_script() {
 
 function pre-requis() {
     sudo cp ${MY_DIR}/environments/${ENVR}/apt.95proxies /etc/apt/apt.conf.d/95proxies
-    curl -sSL http://yourdev.forge.orange-labs.fr/install_yourdev_repo.sh | sudo -E sh
     source ${MY_DIR}/environments/${ENVR}/cntlm.sh
 }
 
