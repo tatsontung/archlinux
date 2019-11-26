@@ -19,7 +19,7 @@ fi
 MY_DIR="$(dirname "$0")"
 USER_CNTLM=mmmmXXXX
 
-while getopts hs:i: opt; do
+while getopts h:u: opt; do
     case $opt in
         h)
             show_help 0
