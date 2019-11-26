@@ -18,4 +18,12 @@ RUN cd $home
 RUN ls -l
 RUN pwd
 ENV TERM=xterm
-RUN bash $home/install.sh -d ubuntu -e external
+#RUN bash $home/install.sh -d ubuntu -e external
+RUN cp $home/scripts/environments/external/home.zshrc ~/.zshrc
+RUN bash $home/scripts/environments/external/homeconfig.sh
+RUN bash $home/scripts/ubuntu/bootstrap.sh
+RUN bash $home/scripts/ubuntu/node.sh
+RUN bash $home/scripts/commons/apps.sh
+RUN bash $home/scripts/commons/config.sh
+RUN bash $home/scripts/commons/git.sh
+RUN bash $home/scripts/commons/zsh.sh
