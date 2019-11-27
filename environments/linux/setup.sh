@@ -2,19 +2,19 @@
 # Fail immediately if any errors occur
 # set -e
 
-SETUP_TYPE=$1
+DIST=$1
 ENVR=$2
 MY_DIR="$(dirname "$0")"
 
 function install_script() {
     cp ${MY_DIR}/config/${ENVR}/home.zshrc ~/.zshrc
     source ${MY_DIR}/config/${ENVR}/homeconfig.sh
-    source ${MY_DIR}/${SETUP_TYPE}/bootstrap.sh
-    source ${MY_DIR}/${SETUP_TYPE}/node.sh
-    source ${MY_DIR}/commons/apps.sh
-    source ${MY_DIR}/commons/config.sh
-    source ${MY_DIR}/commons/git.sh
-    source ${MY_DIR}/commons/zsh.sh
+    source ${MY_DIR}/scripts/${DIST}/bootstrap.sh
+    source ${MY_DIR}/scripts/${DIST}/node.sh
+    source ${MY_DIR}/scripts/commons/apps.sh
+    source ${MY_DIR}/scripts/commons/config.sh
+    source ${MY_DIR}/scripts/commons/git.sh
+    source ${MY_DIR}/scripts/commons/zsh.sh
 }
 
 function pre-requis() {
@@ -27,7 +27,7 @@ function pre-requis() {
 # sudo true;
 # clear
 
-echo "Setting up a '$SETUP_TYPE' machine... with '$ENVR'"
+echo "Setting up a '$DIST' machine... with '$ENVR'"
 case $ENVR in
     internal)
         pre-requis
