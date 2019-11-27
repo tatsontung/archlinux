@@ -1,27 +1,28 @@
 #!/usr/bin/env bash
 
-# Postman is an api tools
-echo "Installing lib dependency for postman"
-sudo apt install libgconf-2-4
-sudo rm -f /usr/bin/postman
+# # Postman is an api tools
+# echo "Installing lib dependency for postman"
+# sudo apt install libgconf-2-4
+# sudo rm -f /usr/bin/postman
 
-echo "Installing postman binary"
-wget https://dl.pstmn.io/download/latest/linux64 -O postman.tar.gz
-sudo tar -xzf postman.tar.gz -C /opt
-rm postman.tar.gz
-sudo ln -s /opt/Postman/Postman /usr/bin/postman
+# echo "Installing postman binary"
+# wget https://dl.pstmn.io/download/latest/linux64 -O /tmp/postman.tar.gz
+# sudo tar -xzf /tmp/postman.tar.gz -C /opt
+# rm /tmp/postman.tar.gz
+# sudo ln -s /opt/Postman/Postman /usr/bin/postman
 
-echo "Customize desktop configuration"
-cat > ~/.local/share/applications/postman.desktop <<EOL
-[Desktop Entry]
-Encoding=UTF-8
-Name=Postman
-Exec=postman --proxy-server=http://127.0.0.1:3128
-Icon=/opt/Postman/app/resources/app/assets/icon.png
-Terminal=false
-Type=Application
-Categories=Development;
-EOL
+# echo "Customize desktop configuration"
+# touch ~/.local/share/applications/postman.desktop
+# cat > ~/.local/share/applications/postman.desktop <<EOL
+# [Desktop Entry]
+# Encoding=UTF-8
+# Name=Postman
+# Exec=postman
+# Icon=/opt/Postman/app/resources/app/assets/icon.png
+# Terminal=false
+# Type=Application
+# Categories=Development;
+# EOL
 
 # Tilix
 echo "Install tilix color shemes and load themes"
@@ -53,7 +54,7 @@ cursor-colors-set=false
 highlight-colors-set=false
 use-theme-colors=false
 bold-color-set=false
-font='Ubuntu Mono derivative Powerline 12'
+font='Monospace Bold 12'
 background-color='#000000'
 EOL
 dconf load /com/gexperts/Tilix/ < /tmp/tilix.conf

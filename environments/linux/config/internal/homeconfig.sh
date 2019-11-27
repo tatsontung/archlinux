@@ -3,6 +3,8 @@
 # When we are in orange configurations with eburo linux
 # Some proxy and config need to be configured here
 # Some team members will be updated here
+
+touch ~/.git-authors
 cat ~/.git-authors <<EOL
 authors:
   tat: Tat Son Tung NGUYEN
@@ -13,6 +15,7 @@ email_addresses:
   tat: tatsontung.nguyen@noreply.com
 EOL
 
+touch ~/.npmrc
 cat ~/.npmrc <<EOL
 cache=${HOME}/.npm-cache
 prefix=${HOME}/.npm-packages

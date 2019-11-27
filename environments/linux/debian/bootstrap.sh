@@ -6,12 +6,14 @@
 # Configuration for cntlm proxy parser
 # echo 'Acquire::http::Proxy "http://10.0.2.2:3128";' >> /etc/apt/apt.conf.d/99proxy
 
-# Update and begin installing some utility tools
+# Update all dependencies and install packages
 sudo apt -y --allow-downgrades --allow-remove-essential --allow-change-held-packages update
 sudo apt -y --allow-downgrades --allow-remove-essential --allow-change-held-packages upgrade
 sudo apt -y --allow-downgrades --allow-remove-essential --allow-change-held-packages install \
-vim curl htop lsof git memcached build-essential \
-python mongodb docker docker-compose screenfetch cowsay fortune-mod zsh tmux ranger mc tty-clock
+vim wget curl htop lsof git memcached build-essential \
+python docker docker-compose nginx tilix tmux tty-clock httpie \
+screenfetch cowsay fortune-mod zsh chromium-browser openjdk-8-jdk  \
+taskwarrior copyq ranger mc cmus figlet cowsay fortune-mod
 
 # Installation docker engine CE
 sudo apt-get install apt-transport-https dirmngr
@@ -21,7 +23,7 @@ sudo apt-get update
 sudo apt-get install docker-engine
 
 # Numix Theme and Icons
-sudo apt install numix-gtk-theme numix-icon-theme
+# sudo apt install numix-gtk-theme numix-icon-theme
 
 echo "Installing gnome-keyring-dev"
 sudo apt-get install libgnome-keyring-dev

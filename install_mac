@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-cd os/mac
-./setup.sh c golang java node
+export SCRIPTS_DIR="$(dirname "$0")/environments/mac"
+${SCRIPTS_DIR}/setup.sh c golang java node

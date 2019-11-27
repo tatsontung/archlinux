@@ -1,5 +1,5 @@
 #!/bin/zsh
-set -e
+# set -e
 
 function show_help() {
     cat << EOF
@@ -9,14 +9,14 @@ Usage: ${0##*/}
                             debian
                             ubuntu *
                             archlinux
-    [-e environment ]
+    [-c configuration ]
                             internal
                             external *
 
 Installing scripts for eburo linux
 
     -d                      Linux distribution cibled
-    -e                      Environment that PC is in
+    -c                      Configuration that PC is in
     -h                      display this help and exit
 
 EOF
@@ -28,9 +28,9 @@ if [[ $# -eq 0 ]] ; then
 fi
 
 distribution=ubuntu
-environment=external
+configuration=external
 
-while getopts hd:e: opt; do
+while getopts hd:c: opt; do
     case $opt in
         h)
             show_help 0
@@ -38,8 +38,8 @@ while getopts hd:e: opt; do
         d)
             distribution="$OPTARG"
         ;;
-        e)
-            environment="$OPTARG"
+        c)
+            configuration="$OPTARG"
         ;;
         *)
             show_help 1 >&2
@@ -53,5 +53,5 @@ if (($# > 0)); then
     show_help 1 >&2
 fi
 
-export SCRIPTS_DIR="$(dirname "$0")/scripts"
-${SCRIPTS_DIR}/setup.sh $distribution $environment
+export SCRIPTS_DIR="$(dirname "$0")/environments/linux"
+${SCRIPTS_DIR}/setup.sh $distribution $configuration

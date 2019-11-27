@@ -1,15 +1,7 @@
 #!/usr/bin/env bash
 
-echo "Installing custom fonts"
-pushd ~/
-if [ ! -d ~/.fonts-custom ]; then
-    git clone https://github.com/victorfu/fonts ~/.fonts-custom
-fi
-~/.fonts-custom/install.sh
-popd
-
 echo "Install custom dircolors"
-cp config/dircolors.ansi-dark.config ~/.dircolors
+cp resources/dircolors.ansi-dark.config ~/.dircolors
 
 echo "Configuration Cmus"
 mkdir -p ~/.config/cmus

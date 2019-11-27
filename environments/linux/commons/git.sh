@@ -53,6 +53,3 @@ echo
 echo "Setting up Git duet aliases..."
 
 git config --global alias.dc duet-commit
-
-# move git-authors into place
-cp config/.git-authors $HOME/.git-authors

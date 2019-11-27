@@ -6,6 +6,8 @@ RUN useradd -m tatsontung && passwd -d tatsontung && adduser tatsontung sudo
 #ADD /sudoers.txt /etc/sudoers
 RUN chmod 440 /etc/sudoers
 RUN cat /etc/sudoers
+RUN touch /usr/lib/node_modules
+RUN chmod 777 /usr/lib/node_modules
 USER tatsontung
 ENV home /home/tatsontung/workspace/workstations-setup
 WORKDIR ${home}
@@ -18,12 +20,12 @@ RUN cd $home
 RUN ls -l
 RUN pwd
 ENV TERM=xterm
-#RUN bash $home/install.sh -d ubuntu -e external
-RUN cp $home/scripts/environments/external/home.zshrc ~/.zshrc
-RUN bash $home/scripts/environments/external/homeconfig.sh
-RUN bash $home/scripts/ubuntu/bootstrap.sh
-RUN bash $home/scripts/ubuntu/node.sh
-RUN bash $home/scripts/commons/apps.sh
-RUN bash $home/scripts/commons/config.sh
-RUN bash $home/scripts/commons/git.sh
-RUN bash $home/scripts/commons/zsh.sh
+RUN bash $home/install_linux -d ubuntu -c external
+# RUN cp $home/environments/linux/config/external/home.zshrc ~/.zshrc
+# RUN bash $home/environments/linux/config/external/homeconfig.sh
+# RUN bash $home/environments/linux/ubuntu/bootstrap.sh
+# RUN bash $home/environments/linux/ubuntu/node.sh
+# RUN bash $home/environments/linux/commons/apps.sh
+# RUN bash $home/environments/linux/commons/config.sh
+# RUN bash $home/environments/linux/commons/git.sh
+# RUN bash $home/environments/linux/commons/zsh.sh
