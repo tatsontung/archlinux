@@ -142,7 +142,7 @@ screenfetch
 
 eval `dircolors ~/.dircolors`
 
-bash $ZSH/custom/welcome.sh
+# bash $ZSH/custom/welcome.sh
 
 # Set up Node Version Manager
 export NVM_DIR="$HOME/.nvm"
