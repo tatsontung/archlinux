@@ -2,7 +2,7 @@ echo
 echo "Installing most recent version of NodeJS"
 brew install node
 brew install node@10
-brew cask link --force --override node@10
+brew link --force --overwrite node@10
 
 echo
 echo "Installing global NodeJS Packages"
