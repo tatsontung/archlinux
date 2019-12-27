@@ -1,6 +1,9 @@
 echo
 echo "Configuring iTerm"
-cp config/com.googlecode.iterm2.plist ~/Library/Preferences
+
+MY_DIR="$(dirname "$0")"
+
+cp ${MY_DIR}/config/com.googlecode.iterm2.plist ~/Library/Preferences
 
 echo "Configuring ShiftIt"
 open /Applications/ShiftIt.app
