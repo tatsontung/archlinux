@@ -124,7 +124,7 @@ alias gitproxyon="git config --global http.proxy http://127.0.0.1:3128"
 alias gitproxyoff="git config --global --unset http.proxy"
 alias sshagent="eval $(ssh-agent -s)"
 
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+export JAVA_HOME=/etc/alternatives/java
 export PATH=$HOME/.npm-packages/bin:$PATH
 export CHROME_BIN=/usr/bin/chromium-browser
 export CHROME_PATH=/usr/lib/chromium

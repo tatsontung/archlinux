@@ -59,6 +59,9 @@ background-color='#000000'
 EOL
 dconf load /com/gexperts/Tilix/ < /tmp/tilix.conf
 
+# Install Ktlint
+curl -o ~/bin/ktlint https://github.com/pinterest/ktlint/releases/download/0.33.0/ktlint && chmod a+x ~/bin/ktlint
+
 # Vim
 echo
 echo "Installing vim configuration"
@@ -68,3 +71,12 @@ if [ ! -d ~/.vim ]; then
     source ~/.vim/bin/install
 fi
 popd
+
+echo "Configuration Unity Dock"
+#gsettings reset org.gnome.shell.extensions.dash-to-dock dash-max-icon-size
+sudo apt install dconf-tools
+gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode FIXED
+gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 64
+gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items true
