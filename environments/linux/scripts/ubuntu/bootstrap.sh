@@ -4,10 +4,12 @@
 #sudo su
 
 # Update all dependencies and install packages
-sudo apt -y --allow-downgrades --allow-remove-essential --allow-change-held-packages update
-sudo apt -y --allow-downgrades --allow-remove-essential --allow-change-held-packages upgrade
-sudo apt -y --allow-downgrades --allow-remove-essential --allow-change-held-packages install \
-vim wget curl htop lsof git memcached build-essential \
-python docker docker-compose nginx tilix tmux tty-clock httpie \
-screenfetch cowsay fortune-mod zsh chromium-browser openjdk-8-jdk  \
-taskwarrior copyq ranger mc cmus figlet cowsay fortune-mod
+sudo add-apt-repository ppa:system76/pop
+
+sudo apt update -y 
+sudo apt upgrade -y 
+sudo apt install -y git build-essential vim wget curl htop lsof tilix tmux tty-clock neofetch cowsay fortune-mod figlet \
+pop-theme gnome-tweaks zsh taskwarrior copyq ranger mc cmus httpie tree \
+nginx chromium-browser python ruby memcached docker docker-compose \
+openjdk-8-jdk openjdk-11-jdk
+
