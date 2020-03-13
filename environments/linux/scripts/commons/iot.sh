@@ -27,7 +27,7 @@ fi
 
 NEWHOST=tat-server
 DISTRO=raspberry
-while getopts h:o: opt; do
+while getopts h:o:d: opt; do
     case $opt in
         h)
             show_help 0
@@ -54,7 +54,6 @@ sudo usermod - aG docker "$USER"
 git clone https: //github.com/gcgarner/IOTstack.git
 ~/menu.sh
 docker - compose up - d
-
 
 case $DISTRO in
     raspberry)
