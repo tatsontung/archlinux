@@ -10,14 +10,14 @@ sudo add-apt-repository ppa:lazygit-team/release
 sudo apt update -y 
 sudo apt upgrade -y 
 sudo apt install -y git build-essential vim neovim wget curl htop lsof tilix tmux tty-clock neofetch cowsay fortune-mod figlet \
-pop-theme gnome-tweaks zsh taskwarrior copyq ranger ueberzug ripgrep silversearcher-ag fd-find  mc cmus httpie tree xsel  \
+pop-theme gnome-tweaks zsh taskwarrior copyq ranger ripgrep silversearcher-ag fd-find  mc cmus httpie tree xsel  \
 nginx chromium-browser python python3 python3-pip ruby memcached docker docker-compose snapd lazygit \
 openjdk-8-jdk openjdk-11-jdk
 
 # Python dependencies
-sudo pip3 install ueberzug
-sudo pip3 install pynvim
-sudp pip3 install neovim-remote
+pip install ueberzug
+pip install pynvim
+pip install neovim-remote
 
 # Install from snap package
 sudo snap install universal-ctags
