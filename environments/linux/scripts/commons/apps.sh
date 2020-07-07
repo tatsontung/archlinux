@@ -65,18 +65,21 @@ curl -o ~/bin/ktlint https://github.com/pinterest/ktlint/releases/download/0.33.
 # Vim
 echo
 echo "Installing vim configuration"
-pushd ~/
-if [ ! -d ~/.vim ]; then
-    git clone https://github.com/tatsontung/vim-config.git ~/.vim
-    source ~/.vim/bin/install
+if [ ! -d ~/.config/nvim ]; then
+  git clone https://github.com/tatsontung/vim.git ~/.vim
+  ln -s ~/.vim/.vimrc ~/.vimrc
+  ~/.vim/bin/install
+  ln -s ~/.vim/plugged/gruvbox/colors/gruvbox.vim ~/.vim/colors/gruvbox.vim
+else
+  echo "Already clone nvim repo"
 fi
-popd
 
-echo "Configuration Unity Dock"
-#gsettings reset org.gnome.shell.extensions.dash-to-dock dash-max-icon-size
-sudo apt install dconf-tools
-gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
-gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode FIXED
-gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 64
-gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items true
+# NVim
+echo
+echo "Installing nvim configuration"
+if [ ! -d ~/.config/nvim ]; then
+  git clone -b tatsontung https://github.com/tatsontung/nvim ~/.config/nvim
+  ~/.config/nvim/utils/install.sh
+else
+  echo "Already clone nvim repo"
+fi
