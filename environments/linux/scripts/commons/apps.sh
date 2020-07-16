@@ -31,31 +31,46 @@ pushd ~/
 if [ ! -d ~/.config/tilix/shemes ]; then
     mkdir -p ~/.config/tilix/schemes/
     wget -qO $HOME"/.config/tilix/schemes/homebrew.json" https://git.io/v7Qa4
+    git clone https://github.com/tatsontung/tilix-gruvbox.git
+    pushd tilix-gruvbox
+    sudo cp gruvbox-* /usr/share/tilix/schemes
+    popd ..
+    rm -rf tilix-gruvbox
 fi
 popd
 cat > /tmp/tilix.conf <<EOL
 [/]
-quake-height-percent=90
+enable-wide-handle=false
 prompt-on-close=true
+prompt-on-delete-profile=true
+quake-height-percent=90
+quake-specific-monitor=0
+terminal-title-show-when-single=false
 terminal-title-style='small'
 theme-variant='system'
-enable-wide-handle=false
 warn-vte-config-issue=false
-terminal-title-show-when-single=false
 window-style='borderless'
 
+[profiles]
+list=['2b7c4080-0ddd-46c5-8f23-563fd3ba789d']
+
 [profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
-foreground-color='#00FF00'
-login-shell=true
-palette=['#000000', '#990000', '#00A600', '#999900', '#0000B2', '#B200B2', '#00A6B2', '#BFBFBF', '#666666', '#E50000', '#00D900', '#E5E500', '#0000FF', '#E500E5', '#00E5E5', '#E5E5E5']
+background-color='#1D2021'
+background-transparency-percent=0
 badge-color-set=false
-use-system-font=false
-cursor-colors-set=false
-highlight-colors-set=false
-use-theme-colors=false
+badge-position='northeast'
+badge-text='${username}${hostname}'
 bold-color-set=false
-font='Monospace Bold 12'
-background-color='#000000'
+cursor-colors-set=false
+dim-transparency-percent=0
+font='Monofur Nerd Font Bold 12'
+foreground-color='#EBDBB2'
+highlight-colors-set=false
+login-shell=true
+palette=['#1D2021', '#CC241D', '#98971A', '#D79921', '#458588', '#B16286', '#689D6A', '#BDAE93', '#7C6F64', '#FB4934', '#B8BB26', '#FABD2F', '#83A598', '#D3869B', '#8EC07C', '#EBDBB2']
+use-system-font=false
+use-theme-colors=false
+visible-name='Default'
 EOL
 dconf load /com/gexperts/Tilix/ < /tmp/tilix.conf
 
