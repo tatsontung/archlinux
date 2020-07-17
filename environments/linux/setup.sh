@@ -11,10 +11,10 @@ function install_script() {
     source ${MY_DIR}/config/${ENVR}/homeconfig.sh
     source ${MY_DIR}/scripts/${DIST}/bootstrap.sh
     source ${MY_DIR}/scripts/${DIST}/node.sh
-    source ${MY_DIR}/scripts/commons/apps.sh
     source ${MY_DIR}/scripts/commons/config.sh
     source ${MY_DIR}/scripts/commons/git.sh
     source ${MY_DIR}/scripts/commons/zsh.sh
+    source ${MY_DIR}/scripts/commons/apps.sh
 }
 
 function pre-requis() {

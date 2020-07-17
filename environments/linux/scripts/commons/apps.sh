@@ -77,6 +77,9 @@ dconf load /com/gexperts/Tilix/ < /tmp/tilix.conf
 # Install Ktlint
 curl -o ~/bin/ktlint https://github.com/pinterest/ktlint/releases/download/0.33.0/ktlint && chmod a+x ~/bin/ktlint
 
+# Install FzF
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
+
 # Vim
 echo
 echo "Installing vim configuration"
@@ -98,3 +101,21 @@ if [ ! -d ~/.config/nvim ]; then
 else
   echo "Already clone nvim repo"
 fi
+
+echo
+echo "-----------------------------------------"
+echo "Done!"
+echo "-----------------------------------------"
+echo
+echo "If hostname needs to be set consider"
+echo "sudo scutil --set ComputerName newname"
+echo "sudo scutil --set LocalHostName newname"
+echo "sudo scutil --set HostName newname"
+echo
+echo "You can use 'git pair' (enabled) 'git duet' (enabled) or 'git with' aka git-together (installed but not enabled)"
+echo "To enable git together"
+echo "'git=git-together' >> ~/.bash_profile"
+echo
+echo "After checking the above output for any problems, start a new terminal session to make use of all the installed tools."
+echo "Rebooting is only necessary for keyboard repeat settings to work."
+echo
