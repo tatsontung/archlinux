@@ -6,10 +6,10 @@
 # Update all dependencies and install packages
 sudo add-apt-repository ppa:lazygit-team/release
 
-sudo apt update -y 
-sudo apt upgrade -y 
+sudo apt update -y
+sudo apt upgrade -y
 sudo apt install -y git build-essential vim neovim wget curl htop lsof tilix tmux tty-clock neofetch cowsay fortune-mod figlet \
-alacritty gnome-tweaks fzf zsh taskwarrior copyq ranger ripgrep silversearcher-ag fd-find  mc cmus httpie tree xsel  \
+gnome-tweaks fzf zsh taskwarrior copyq ranger ripgrep silversearcher-ag fd-find  mc cmus httpie tree xsel  \
 nginx chromium-browser python python3 python3-pip ruby memcached docker docker-compose snapd lazygit \
 openjdk-8-jdk openjdk-11-jdk
 
