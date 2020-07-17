@@ -34,7 +34,7 @@ if [ ! -d ~/.config/tilix/shemes ]; then
     git clone https://github.com/tatsontung/tilix-gruvbox.git
     pushd tilix-gruvbox
     sudo cp gruvbox-* /usr/share/tilix/schemes
-    popd ..
+    popd
     rm -rf tilix-gruvbox
 fi
 popd
@@ -73,9 +73,6 @@ use-theme-colors=false
 visible-name='Default'
 EOL
 dconf load /com/gexperts/Tilix/ < /tmp/tilix.conf
-
-# Install Ktlint
-curl -o ~/bin/ktlint https://github.com/pinterest/ktlint/releases/download/0.33.0/ktlint && chmod a+x ~/bin/ktlint
 
 # Install FzF
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
