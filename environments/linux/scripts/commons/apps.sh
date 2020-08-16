@@ -80,6 +80,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 # Vim
 echo
 echo "Installing vim configuration"
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 if [ ! -d ~/.config/nvim ]; then
   git clone https://github.com/tatsontung/vim.git ~/.vim
   ln -s ~/.vim/.vimrc ~/.vimrc
@@ -92,6 +93,7 @@ fi
 # NVim
 echo
 echo "Installing nvim configuration"
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 if [ ! -d ~/.config/nvim ]; then
   git clone -b tatsontung https://github.com/tatsontung/nvim ~/.config/nvim
   ~/.config/nvim/utils/install.sh
