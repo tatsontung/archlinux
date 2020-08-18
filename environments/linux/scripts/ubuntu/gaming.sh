@@ -6,14 +6,16 @@
 sudo dpkg --add-architecture i386
 
 # AMD
-#sudo add-apt-repository ppa:kisak/kisak-mesa -y
-#sudo apt install libgl1-mesa-dri:i386 mesa-vulkan-drivers mesa-vulkan-drivers:i386 -y
+sudo add-apt-repository ppa:kisak/kisak-mesa -y
+sudo apt install libgl1-mesa-dri:i386 mesa-vulkan-drivers mesa-vulkan-drivers:i386 -y
 
 # NVIDIA
-sudo add-apt-repository ppa:graphics-drivers/ppa -y
-sudo apt install nvidia-driver-450 libnvidia-gl-450 libnvidia-gl-450:i386 libvulkan1 libvulkan1:i386 -y
+#sudo add-apt-repository ppa:graphics-drivers/ppa -y
+#sudo apt install nvidia-driver-450 libnvidia-gl-450 libnvidia-gl-450:i386 libvulkan1 libvulkan1:i386 -y
 
 # Wine Lutris
+wget -nc https://dl.winehq.org/wine-builds/winehq.key && sudo apt-key add winehq.key && sudo apt update
+rm winehq.key
 sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main' -y
 sudo add-apt-repository ppa:lutris-team/lutris -y
 sudo apt update
@@ -26,3 +28,9 @@ cd ~
 wget https://raw.githubusercontent.com/Termuellinator/ProtonUpdater/master/cproton.sh
 sudo chmod +x cproton.sh
 ./cproton.sh
+
+# Game Mode
+sudo apt install meson libsystemd-dev pkg-config ninja-build git libdbus-1-dev libinih-dev dbus-user-session -y
+
+# Steam
+sudo apt-get install steam
