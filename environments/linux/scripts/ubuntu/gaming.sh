@@ -23,6 +23,9 @@ sudo apt-get install --install-recommends winehq-staging -y
 sudo apt-get install libgnutls30:i386 libldap-2.4-2:i386 libgpg-error0:i386 libxml2:i386 libasound2-plugins:i386 libsdl2-2.0-0:i386 libfreetype6:i386 libdbus-1-3:i386 libsqlite3-0:i386 -y
 sudo apt-get install lutris -y
 
+# Steam
+sudo apt-get install steam
+
 # Proton
 cd ~
 wget https://raw.githubusercontent.com/Termuellinator/ProtonUpdater/master/cproton.sh
@@ -31,6 +34,3 @@ sudo chmod +x cproton.sh
 
 # Game Mode
 sudo apt install meson libsystemd-dev pkg-config ninja-build git libdbus-1-dev libinih-dev dbus-user-session -y
-
-# Steam
-sudo apt-get install steam
