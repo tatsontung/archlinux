@@ -7,7 +7,7 @@ ENVR=$2
 MY_DIR="$(dirname "$0")"
 
 function install_script() {
-    cp ${MY_DIR}/config/${ENVR}/home.zshrc ~/.zshrc
+    #cp ${MY_DIR}/config/${ENVR}/home.zshrc ~/.zshrc go setup to dotfiles
     source ${MY_DIR}/config/${ENVR}/homeconfig.sh
     source ${MY_DIR}/scripts/${DIST}/bootstrap.sh
     source ${MY_DIR}/scripts/${DIST}/node.sh
