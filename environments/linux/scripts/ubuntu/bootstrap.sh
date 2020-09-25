@@ -16,6 +16,7 @@ openjdk-8-jdk openjdk-11-jdk
 # Python dependencies
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 sudo python get-pip.py
+rm get-pip.py
 
 pip3 install ueberzug
 pip3 install pynvim
