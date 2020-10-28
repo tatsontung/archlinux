@@ -8,7 +8,6 @@ sudo apt --allow-downgrades --allow-remove-essential --allow-change-held-package
 echo "Configure npmrc"
 cat > ~/.npmrc << EOL
 cache=${HOME}/.npm-cache
-prefix=${HOME}/.npm-packages
 strict-ssl=false
 EOL
 
