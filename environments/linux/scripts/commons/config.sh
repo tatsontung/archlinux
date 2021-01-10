@@ -17,14 +17,10 @@ if [ ! -d ~/.fonts ]; then
   mkdir -p ~/.fonts
 fi
 pushd ~/.fonts
-curl https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Monofur.zip -O -J -L
-curl https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Hack.zip -O -J -L
+curl https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Monofur.zip -O -J -L
+curl https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip -O -J -L
 unzip Monofur.zip -d Monofur
 unzip Hack.zip -d Hack
-curl https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -O -J -L
-curl https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf -O -J -L
-curl https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf -O -J -L
-curl https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -O -J -L
 fc-cache -fv ~/.fonts
 rm ~/.fonts/Monofur.zip
 rm ~/.fonts/Hack.zip
