@@ -77,6 +77,11 @@ dconf load /com/gexperts/Tilix/ < /tmp/tilix.conf
 # Install FzF
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 
+# LSD (LS Deluxe)
+echo "Install lsd nexgen ls command written in Rust"
+curl https://github.com/Peltoche/lsd/releases/download/0.19.0/lsd_0.19.0_amd64.deb -O -J -L
+sudo dpkg -i lsd_0.19.0_amd64.deb
+
 # Vim
 echo
 echo "Installing vim configuration"
