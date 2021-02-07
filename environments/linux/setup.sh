@@ -6,6 +6,13 @@ DIST=$1
 ENVR=$2
 MY_DIR="$(dirname "$0")"
 
+
+# Get root up in here
+if [ "$(whoami)" != "root" ]
+then
+    sudo su -s "$0"
+fi
+
 function install_script() {
     echo "Install custom dircolors"
     cp ${MY_DIR}/config/dircolors.ansi-dark.config ~/.dircolors

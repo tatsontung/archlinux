@@ -47,7 +47,7 @@ rm  -rf /tmp/gitduet
 mkdir -p /tmp/gitduet
 curl -L https://github.com/git-duet/git-duet/releases/download/0.5.2/linux_amd64.tar.gz > /tmp/gitduet/gitduet.tar.gz
 tar -xvzf /tmp/gitduet/gitduet.tar.gz --directory /tmp/gitduet
-sudo mv /tmp/gitduet/git-* /usr/local/bin
+mv /tmp/gitduet/git-* /usr/local/bin
 
 echo
 echo "Setting up Git duet aliases..."
@@ -55,8 +55,8 @@ echo "Setting up Git duet aliases..."
 git config --global alias.dc duet-commit
 
 echo "Configuration git credentials gnome"
-sudo apt-get install libsecret-1-0 libsecret-1-dev
+apt-get install libsecret-1-0 libsecret-1-dev
 pushd /usr/share/doc/git/contrib/credential/libsecret
-sudo make
+make
 git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 popd

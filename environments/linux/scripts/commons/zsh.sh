@@ -12,10 +12,10 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 echo
 echo "Copy zsh configuration"
 mkdir -p ~/.oh-my-zsh/custom/
-sudo sysctl fs.inotify.max_user_watches=524288
+sysctl fs.inotify.max_user_watches=524288
 chsh -s `which zsh`
 
 # SYSCTL
 echo "setting sysctl to 9001!!!"
 # this number is for angular js watch files changes
-echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p

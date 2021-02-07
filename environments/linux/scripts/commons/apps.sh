@@ -26,14 +26,14 @@
 
 # Tilix
 echo "Install tilix color shemes and load themes"
-sudo apt install tilix
+apt install tilix
 pushd ~/
 if [ ! -d ~/.config/tilix/shemes ]; then
     mkdir -p ~/.config/tilix/schemes/
     wget -qO $HOME"/.config/tilix/schemes/homebrew.json" https://git.io/v7Qa4
     git clone https://github.com/tatsontung/tilix-gruvbox.git
     pushd tilix-gruvbox
-    sudo cp gruvbox-* /usr/share/tilix/schemes
+    cp gruvbox-* /usr/share/tilix/schemes
     popd
     rm -rf tilix-gruvbox
 fi
@@ -135,6 +135,8 @@ curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/i
 
 # Install SDK Man
 curl -s "https://get.sdkman.io" | bash
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 sdk list java
 
 echo
