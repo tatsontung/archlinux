@@ -7,7 +7,8 @@ ENVR=$2
 MY_DIR="$(dirname "$0")"
 
 function install_script() {
-    #cp ${MY_DIR}/config/${ENVR}/home.zshrc ~/.zshrc go setup to dotfiles
+    echo "Install custom dircolors"
+    cp ${MY_DIR}/config/dircolors.ansi-dark.config ~/.dircolors
     source ${MY_DIR}/config/${ENVR}/homeconfig.sh
     source ${MY_DIR}/scripts/${DIST}/bootstrap.sh
     source ${MY_DIR}/scripts/commons/node.sh

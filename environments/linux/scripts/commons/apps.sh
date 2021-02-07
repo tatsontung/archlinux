@@ -130,12 +130,12 @@ else
   echo "Already clone nvim repo"
 fi
 
-# NVM node version manager
-echo "Installing NVM node version manager"
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+# Install lazy docker
+curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 
 # Install SDK Man
 curl -s "https://get.sdkman.io" | bash
+sdk list java
 
 echo
 echo "-----------------------------------------"

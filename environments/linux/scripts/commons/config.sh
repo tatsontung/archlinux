@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-echo "Install custom dircolors"
-cp resources/dircolors.ansi-dark.config ~/.dircolors
-
 echo "Configuration Cmus"
 mkdir -p ~/.config/cmus
 cat > ~/.config/cmus/rc << EOL

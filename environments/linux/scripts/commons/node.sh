@@ -7,7 +7,7 @@ export NVM_DIR="$HOME/.nvm" && (
   git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
 ) && \. "$NVM_DIR/nvm.sh"
 
-nvm install node # "node" is an alias for the latest version
+nvm install --lts=erbium # "node" is an alias for the latest version
 
 echo "Configure npmrc"
 cat > ~/.npmrc << EOL
