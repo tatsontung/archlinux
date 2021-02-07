@@ -74,7 +74,7 @@ visible-name='Default'
 EOL
 dconf load /com/gexperts/Tilix/ < /tmp/tilix.conf
 
-# Gnome Terminal
+# Gnome Terminalcle
 cat > /tmp/gnome-terminal.conf <<EOL
 [/]
 list=['8ea9f29b-56e8-466a-b1f9-c400ae62d070']
@@ -101,12 +101,9 @@ EOL
 dconf load /org/gnome/terminal/legacy/profiles:/ < /tmp/gnome-terminal.conf
 
 # Install FzF
+echo
+echo "Installing fzf configuration"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
-
-# LSD (LS Deluxe)
-echo "Install lsd nexgen ls command written in Rust"
-curl https://github.com/Peltoche/lsd/releases/download/0.19.0/lsd_0.19.0_amd64.deb -O -J -L
-sudo dpkg -i lsd_0.19.0_amd64.deb
 
 # Vim
 echo
@@ -116,6 +113,7 @@ if [ ! -d ~/.config/nvim ]; then
   git clone https://github.com/tatsontung/vim.git ~/.vim
   ln -s ~/.vim/.vimrc ~/.vimrc
   ~/.vim/bin/install
+  mkdir -p ~/.vim/colors
   ln -s ~/.vim/plugged/gruvbox/colors/gruvbox.vim ~/.vim/colors/gruvbox.vim
 else
   echo "Already clone nvim repo"
@@ -131,6 +129,13 @@ if [ ! -d ~/.config/nvim ]; then
 else
   echo "Already clone nvim repo"
 fi
+
+# NVM node version manager
+echo "Installing NVM node version manager"
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+
+# Install SDK Man
+curl -s "https://get.sdkman.io" | bash
 
 echo
 echo "-----------------------------------------"

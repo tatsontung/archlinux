@@ -10,7 +10,7 @@ function install_script() {
     #cp ${MY_DIR}/config/${ENVR}/home.zshrc ~/.zshrc go setup to dotfiles
     source ${MY_DIR}/config/${ENVR}/homeconfig.sh
     source ${MY_DIR}/scripts/${DIST}/bootstrap.sh
-    source ${MY_DIR}/scripts/${DIST}/node.sh
+    source ${MY_DIR}/scripts/commons/node.sh
     source ${MY_DIR}/scripts/commons/config.sh
     source ${MY_DIR}/scripts/commons/git.sh
     source ${MY_DIR}/scripts/commons/zsh.sh
