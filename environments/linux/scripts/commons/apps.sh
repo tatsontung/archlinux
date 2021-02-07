@@ -26,14 +26,13 @@
 
 # Tilix
 echo "Install tilix color shemes and load themes"
-apt install tilix
 pushd ~/
 if [ ! -d ~/.config/tilix/shemes ]; then
     mkdir -p ~/.config/tilix/schemes/
     wget -qO $HOME"/.config/tilix/schemes/homebrew.json" https://git.io/v7Qa4
     git clone https://github.com/tatsontung/tilix-gruvbox.git
     pushd tilix-gruvbox
-    cp gruvbox-* /usr/share/tilix/schemes
+    cp gruvbox-* ~/.config/tilix/schemes/
     popd
     rm -rf tilix-gruvbox
 fi
@@ -72,7 +71,6 @@ use-system-font=false
 use-theme-colors=false
 visible-name='Default'
 EOL
-dconf load /com/gexperts/Tilix/ < /tmp/tilix.conf
 
 # Gnome Terminalcle
 cat > /tmp/gnome-terminal.conf <<EOL
@@ -98,19 +96,52 @@ use-theme-transparency=false
 use-transparent-background=true
 visible-name='Gruvbox Dark'
 EOL
-dconf load /org/gnome/terminal/legacy/profiles:/ < /tmp/gnome-terminal.conf
+
+if ! command -v dconf &> /dev/null
+then
+    echo "COMMAND dconf could not be found think to switch to Gnome"
+else
+    dconf load /com/gexperts/Tilix/ < /tmp/tilix.conf
+    dconf load /org/gnome/terminal/legacy/profiles:/ < /tmp/gnome-terminal.conf
+fi
+
 
 # Install FzF
 echo
 echo "Installing fzf configuration"
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
+if [ ! -d ~/.fzf ]; then
+  rm -rf ~/.fzf
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
+fi
+
+echo "Installing node"
+export NVM_DIR="$HOME/.nvm" && (
+  git clone https://github.com/nvm-sh/nvm.git "$NVM_DIR"
+  cd "$NVM_DIR"
+  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
+) && \. "$NVM_DIR/nvm.sh"
+
+nvm install --lts=erbium # "node" is an alias for the latest version
+
+echo "Configure npmrc"
+cat > ~/.npmrc << EOL
+cache=${HOME}/.npm-cache
+strict-ssl=false
+EOL
+
+echo "Installing angular 2 core"
+export NG_CLI_ANALYTICS=ci
+npm i -g @angular/cli @angular/core
 
 # Vim
 echo
 echo "Installing vim configuration"
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if [ ! -d ~/.vim ]; then
+  rm -rf ~/.vim
+fi
 if [ ! -d ~/.config/nvim ]; then
   git clone https://github.com/tatsontung/vim.git ~/.vim
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   ln -s ~/.vim/.vimrc ~/.vimrc
   ~/.vim/bin/install
   mkdir -p ~/.vim/colors
@@ -138,21 +169,3 @@ curl -s "https://get.sdkman.io" | bash
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 sdk list java
-
-echo
-echo "-----------------------------------------"
-echo "Done!"
-echo "-----------------------------------------"
-echo
-echo "If hostname needs to be set consider"
-echo "sudo scutil --set ComputerName newname"
-echo "sudo scutil --set LocalHostName newname"
-echo "sudo scutil --set HostName newname"
-echo
-echo "You can use 'git pair' (enabled) 'git duet' (enabled) or 'git with' aka git-together (installed but not enabled)"
-echo "To enable git together"
-echo "'git=git-together' >> ~/.bash_profile"
-echo
-echo "After checking the above output for any problems, start a new terminal session to make use of all the installed tools."
-echo "Rebooting is only necessary for keyboard repeat settings to work."
-echo

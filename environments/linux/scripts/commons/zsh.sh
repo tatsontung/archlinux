@@ -12,10 +12,30 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 echo
 echo "Copy zsh configuration"
 mkdir -p ~/.oh-my-zsh/custom/
-sysctl fs.inotify.max_user_watches=524288
-chsh -s `which zsh`
 
-# SYSCTL
-echo "setting sysctl to 9001!!!"
-# this number is for angular js watch files changes
-echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p
+if [ "$(whoami)" != "root" ]
+then
+  sudo chsh -s `which zsh`
+else
+  chsh -s `which zsh`
+fi
+
+touch $HOME/.credrc.sh
+
+echo
+echo "-----------------------------------------"
+echo "Done!"
+echo "-----------------------------------------"
+echo
+echo "If hostname needs to be set consider"
+echo "sudo scutil --set ComputerName newname"
+echo "sudo scutil --set LocalHostName newname"
+echo "sudo scutil --set HostName newname"
+echo
+echo "You can use 'git pair' (enabled) 'git duet' (enabled) or 'git with' aka git-together (installed but not enabled)"
+echo "To enable git together"
+echo "'git=git-together' >> ~/.bash_profile"
+echo
+echo "After checking the above output for any problems, start a new terminal session to make use of all the installed tools."
+echo "Rebooting is only necessary for keyboard repeat settings to work."
+echo

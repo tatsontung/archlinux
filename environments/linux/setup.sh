@@ -1,28 +1,21 @@
 #!/usr/bin/env bash
 # Fail immediately if any errors occur
-# set -e
+set -e
 
 DIST=$1
 ENVR=$2
 MY_DIR="$(dirname "$0")"
-
-
-# Get root up in here
-if [ "$(whoami)" != "root" ]
-then
-    sudo su -s "$0"
-fi
-
+echo "$MY_DIR"
 function install_script() {
     echo "Install custom dircolors"
+    # Get root up in here
+    source ${MY_DIR}/scripts/${DIST}/bootstrap.sh
     cp ${MY_DIR}/config/dircolors.ansi-dark.config ~/.dircolors
     source ${MY_DIR}/config/${ENVR}/homeconfig.sh
-    source ${MY_DIR}/scripts/${DIST}/bootstrap.sh
-    source ${MY_DIR}/scripts/commons/node.sh
     source ${MY_DIR}/scripts/commons/config.sh
     source ${MY_DIR}/scripts/commons/git.sh
-    source ${MY_DIR}/scripts/commons/zsh.sh
     source ${MY_DIR}/scripts/commons/apps.sh
+    source ${MY_DIR}/scripts/commons/zsh.sh
 }
 
 function pre-requis() {

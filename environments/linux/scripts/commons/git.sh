@@ -30,33 +30,17 @@ git config --global alias.fixup commit --fixup
 git config --global alias.squash commit --squash
 git config --global alias.unstage reset HEAD
 git config --global alias.rum "rebase master@{u}"
-
-echo
-echo "Setting default (simple) git push behavior..."
 git config --global push.default simple
-git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 
-#!/usr/bin/env bash
-echo
-echo "Installing Git Duet and associated tools"
-
-# Git configuration
 echo
 echo "Configuration Git duet"
 rm  -rf /tmp/gitduet
 mkdir -p /tmp/gitduet
-curl -L https://github.com/git-duet/git-duet/releases/download/0.5.2/linux_amd64.tar.gz > /tmp/gitduet/gitduet.tar.gz
+curl -L https://github.com/git-duet/git-duet/releases/download/0.7.0/linux_amd64.tar.gz > /tmp/gitduet/gitduet.tar.gz
 tar -xvzf /tmp/gitduet/gitduet.tar.gz --directory /tmp/gitduet
-mv /tmp/gitduet/git-* /usr/local/bin
+sudo mv /tmp/gitduet/git-* $HOME/bin
 
 echo
 echo "Setting up Git duet aliases..."
 
 git config --global alias.dc duet-commit
-
-echo "Configuration git credentials gnome"
-apt-get install libsecret-1-0 libsecret-1-dev
-pushd /usr/share/doc/git/contrib/credential/libsecret
-make
-git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
-popd

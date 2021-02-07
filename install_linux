@@ -7,8 +7,7 @@ function show_help() {
 Usage: ${0##*/}
     [-h show help]
     [-d distribution ]
-                            debian
-                            ubuntu *
+                            debian *
                             archlinux
     [-c configuration ]
                             internal
@@ -28,7 +27,7 @@ if [[ $# -eq 0 ]] ; then
     show_help 0
 fi
 
-distribution=ubuntu
+distribution=debian
 configuration=external
 
 while getopts hd:c: opt; do
