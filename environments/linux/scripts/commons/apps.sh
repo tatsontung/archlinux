@@ -137,9 +137,6 @@ npm i -g @angular/cli @angular/core
 echo
 echo "Installing vim configuration"
 if [ ! -d ~/.vim ]; then
-  rm -rf ~/.vim
-fi
-if [ ! -d ~/.config/nvim ]; then
   git clone https://github.com/tatsontung/vim.git ~/.vim
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   ln -s ~/.vim/.vimrc ~/.vimrc
@@ -147,15 +144,15 @@ if [ ! -d ~/.config/nvim ]; then
   mkdir -p ~/.vim/colors
   ln -s ~/.vim/plugged/gruvbox/colors/gruvbox.vim ~/.vim/colors/gruvbox.vim
 else
-  echo "Already clone nvim repo"
+  echo "Already clone vim repo"
 fi
 
 # NVim
 echo
 echo "Installing nvim configuration"
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 if [ ! -d ~/.config/nvim ]; then
   git clone -b tatsontung https://github.com/tatsontung/nvim ~/.config/nvim
+  curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   ~/.config/nvim/utils/install.sh
 else
   echo "Already clone nvim repo"
