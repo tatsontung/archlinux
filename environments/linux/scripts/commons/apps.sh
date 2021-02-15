@@ -167,7 +167,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # Install Go
 curl -O https://dl.google.com/go/go1.15.linux-amd64.tar.gz
 tar xvf go1.15.linux-amd64.tar.gz
-mv go1.15 ~/sdk/go1.15
+mkdir -p ~/sdk
+mv go ~/sdk/go1.15
+rm go1.15.linux-amd64.tar.gz
 
 # Install SDK Man
 curl -s "https://get.sdkman.io" | bash
