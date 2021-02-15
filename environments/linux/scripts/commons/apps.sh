@@ -169,6 +169,7 @@ curl -O https://dl.google.com/go/go1.15.linux-amd64.tar.gz
 tar xvf go1.15.linux-amd64.tar.gz
 mkdir -p ~/sdk
 mv go ~/sdk/go1.15
+ln -s ~/sdk/go1.15 ~/sdk/go
 rm go1.15.linux-amd64.tar.gz
 
 # Install SDK Man
