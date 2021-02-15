@@ -161,6 +161,14 @@ fi
 # Install lazy docker
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 
+# Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Install Go
+curl -O https://dl.google.com/go/go1.15.linux-amd64.tar.gz
+tar xvf go1.15.linux-amd64.tar.gz
+mv go1.15 ~/sdk/go1.15
+
 # Install SDK Man
 curl -s "https://get.sdkman.io" | bash
 export SDKMAN_DIR="$HOME/.sdkman"
