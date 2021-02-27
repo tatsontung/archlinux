@@ -6,8 +6,8 @@ echo "Installing Git and associated tools"
 echo
 echo "Setting up user"
 echo "Configuration Git"
-git config --global user.name "Tofino DEV Team"
-git config --global user.email tofino.dev@orane.com
+git config --global user.name "Tat Corp"
+git config --global user.email tat.dev@tatcorp.com
 git config --global core.editor vim
 
 echo
@@ -42,5 +42,4 @@ sudo mv /tmp/gitduet/git-* $HOME/bin
 
 echo
 echo "Setting up Git duet aliases..."
-
 git config --global alias.dc duet-commit
