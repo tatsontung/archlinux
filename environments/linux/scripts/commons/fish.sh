@@ -9,14 +9,15 @@ else
   chsh -s `which fish`
 fi
 
-fisher install oh-my-fish/theme-bobthefish
-fisher install jethrokuan/fzf
-fisher install jorgebucaran/fish-nvm
-
 cat > $HOME/.config/fish/config.fish <<EOL
+# Init config file for fish
+set -Ua fish_user_paths $HOME/.local/bin
+set -Ua fish_user_paths $HOME/bin
+
 # No greeting when starting an interactive shell.
 function fish_greeting
-  $HOME/bin/pfetch
+  # fisher update
+  pfetch
 end
 
 set -g theme_display_user yes
@@ -48,6 +49,14 @@ alias ll='ls -l'
 alias la='ls -la'
 alias llc='colorls -lA --sd'
 alias lc='colorls --sd'
-
 EOL
+
+cat > $HOME/.config/fish/fish_plugins <<EOL
+jorgebucaran/fisher
+oh-my-fish/theme-bobthefish
+jethrokuan/fzf
+jorgebucaran/fish-nvm
+EOL
+
+
 
